@@ -2,7 +2,7 @@ package com.mazdausa.test.automation.components;
 
 import java.util.List;
 
-public class VehicleRotationTest extends BaseTest {
+public class VehicleRotation extends BaseComponent {
 
 	private int frameCount;
 	private List imageList; 

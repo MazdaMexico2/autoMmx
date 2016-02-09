@@ -1,6 +1,6 @@
 package com.mazdausa.test.automation.components;
 
-public class CopyTest extends BaseTest 
+public class Copy extends BaseComponent 
 {
 	private String copy;
 	private String type;

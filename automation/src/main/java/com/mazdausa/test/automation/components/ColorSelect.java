@@ -2,7 +2,7 @@ package com.mazdausa.test.automation.components;
 
 import java.util.List;
 
-public class ColorSelectTest extends BaseTest {
+public class ColorSelect extends BaseComponent {
 
 	private int availableColorCount;
 	private List availableColorNames;

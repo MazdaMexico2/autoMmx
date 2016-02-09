@@ -1,25 +1,26 @@
 package com.mazdausa.test.automation.components;
 
-public class BaseTest
+public class BaseComponent implements Component
 {
-	private String testName ;
-	private String siteComponent ;
+	private String name ;
+	private String type ; 
 	private String siteName ;
+	
 	private String vehicleCode ;
 	private String locationUrl ;
 	private String xPath ;
 	
-	public String getTestName() {
-		return testName;
+	public String getName() {
+		return name;
 	}
-	public void setTestName(String testName) {
-		this.testName = testName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getSiteComponent() {
-		return siteComponent;
+	public String getType() {
+		return type;
 	}
-	public void setSiteComponent(String siteComponent) {
-		this.siteComponent = siteComponent;
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getSiteName() {
 		return siteName;
@@ -39,13 +40,12 @@ public class BaseTest
 	public void setLocationUrl(String locationUrl) {
 		this.locationUrl = locationUrl;
 	}
-	public String getxPath() {
+	public String getXPath() {
 		return xPath;
 	}
-	public void setxPath(String xPath) {
+	public void setXPath(String xPath) {
 		this.xPath = xPath;
 	}
 
-	
-	
+
 }

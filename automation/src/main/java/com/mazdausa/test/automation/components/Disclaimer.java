@@ -1,6 +1,6 @@
 package com.mazdausa.test.automation.components;
 
-public class DisclaimerTest extends BaseTest {
+public class Disclaimer extends BaseComponent {
 
 	private String asteriskColor;
 	private String targetUrl;

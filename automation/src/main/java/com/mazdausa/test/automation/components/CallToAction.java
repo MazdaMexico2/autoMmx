@@ -1,6 +1,6 @@
 package com.mazdausa.test.automation.components;
 
-public class CallToActionTest extends BaseTest 
+public class CallToAction extends BaseComponent 
 {
 	private String copy;
 	private String color;

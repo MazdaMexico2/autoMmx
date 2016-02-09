@@ -2,6 +2,7 @@ package com.mazdausa.test.util;
 
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.StringTokenizer;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,6 +27,17 @@ import org.openqa.selenium.WebElement;
 
 public class TestUtil 
 {
+	public Properties configProperties ;
+	
+	/**
+	 * Get the default Configuration Properties
+	 * @return
+	 */
+	public Properties getConfigProperties()
+	{
+		return configProperties;
+	}
+	
 	/**
 	 * Read a specified configuration file into a Properties object.  
 	 * 
@@ -50,9 +62,35 @@ public class TestUtil
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		this.configProperties = configProps;
 
 		return configProps;
 	}
+	
+	/**
+	 * Tokenizes a pipe-delimited String of property values. 
+	 * Each String token is added to the returned List .
+	 * 
+	 * @param propertyName
+	 * @return List<String>
+	 */
+	public List<String> getStringTokens(String propertyName)
+	{
+		String delimitedTokens = this.configProperties.getProperty(propertyName);
+		StringTokenizer tokenizer = new StringTokenizer(delimitedTokens);
+		List<String> tokensList = new ArrayList<String>();
+		
+		String token = null;
+		while(tokenizer.hasMoreTokens())
+		{
+			token = tokenizer.nextToken("|");
+			tokensList.add(token);
+		}
+		
+		return tokensList;
+	}
+	
 	
 	
 	//IMAGES
