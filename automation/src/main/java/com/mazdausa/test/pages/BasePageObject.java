@@ -9,10 +9,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-import com.mazdausa.test.automation.BaseWebObject;
 import com.mazdausa.test.automation.panels.Panel;
 
-public class BasePageObject extends BaseWebObject 
+public class BasePageObject implements PageObject
 {
 	protected String pageUrl ;
 	protected List<By> pageElements;
@@ -20,24 +19,19 @@ public class BasePageObject extends BaseWebObject
 	protected String environment;
 	protected List<Panel> panels;
 	
-	/** Constructor. */
-	public BasePageObject() 
-	{
-	}	
 	
-	/** Constructor. */
-	public BasePageObject(WebDriver driver) 
+	/**
+	 * 
+	 * @return
+	 */
+	public List<WebElement> getAllWebElements()
 	{
-		super(driver);
+		List allWebElements = new ArrayList();
+		
+		return allWebElements;
+		
 	}
-	
-	/** Constructor. */
-	public BasePageObject(WebDriver driver, String pageUrl) 
-	{
-		super(driver);
-		this.setPageUrl(pageUrl);
-	}	
-	
+
 	/**
 	 * 
 	 * @return
@@ -52,6 +46,32 @@ public class BasePageObject extends BaseWebObject
 	 */
 	public void setPageUrl(String pageUrl) {
 		this.pageUrl = pageUrl;
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public List<By> getPageElements() {
+		return pageElements;
+	}
+
+	/**
+	 * 
+	 * @param pageElements
+	 */
+	public void setPageElements(List<By> pageElements) {
+		this.pageElements = pageElements;
+	}
+
+	public WebElement getWebElementByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public WebElement getWebElementByXPath(String xpath) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
