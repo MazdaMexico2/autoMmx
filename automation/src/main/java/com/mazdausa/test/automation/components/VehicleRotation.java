@@ -2,8 +2,6 @@ package com.mazdausa.test.automation.components;
 
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
-
 public class VehicleRotation extends BaseComponent {
 
 	private int frameCount;
@@ -11,11 +9,7 @@ public class VehicleRotation extends BaseComponent {
 	private String dragDirection; 
 	private String selectedColor;
 	
-	public VehicleRotation(WebDriver driver) 
-	{
-		super(driver);
-	}	
-	
+
 	public void startDrag()
 	{
 		

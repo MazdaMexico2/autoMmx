@@ -2,14 +2,16 @@ package com.mazdausa.test.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class OverviewPage extends BasePageObject
+public class OverviewPage 
 {
-
-	public OverviewPage(WebDriver driver) 
+	private final WebDriver driver;
+	
+	// Constructor
+	public OverviewPage(WebDriver driver)
 	{
-		super(driver);
+		// Instantiate the Selenium WebDriver
+		this.driver = driver;
 	}
-
 	
 	
 	

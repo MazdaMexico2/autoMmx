@@ -1,10 +1,6 @@
 package com.mazdausa.test.automation.components;
 
-import org.openqa.selenium.WebDriver;
-
-import com.mazdausa.test.automation.BaseWebObject;
-
-public class BaseComponent extends BaseWebObject
+public class BaseComponent implements Component
 {
 	private String name ;
 	private String type ; 
@@ -13,15 +9,6 @@ public class BaseComponent extends BaseWebObject
 	private String vehicleCode ;
 	private String locationUrl ;
 	private String xPath ;
-	
-	public BaseComponent()
-	{ 
-	}
-	
-	public BaseComponent(WebDriver driver)
-	{
-		super.setWebDriver(driver);
-	}
 	
 	public String getName() {
 		return name;

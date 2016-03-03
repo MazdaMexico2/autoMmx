@@ -2,10 +2,7 @@ package com.mazdausa.test.automation.components;
 
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
-
-public class ColorSelect extends BaseComponent 
-{
+public class ColorSelect extends BaseComponent {
 
 	private int availableColorCount;
 	private List availableColorNames;
@@ -14,11 +11,7 @@ public class ColorSelect extends BaseComponent
 	private String selectedColorSwatch;
 	private String vehicleImageColor;
 	
-	public ColorSelect(WebDriver driver) 
-	{
-		super(driver);
-
-	}	
+	
 	
 	/* Getter / Setter Methods */
 	public int getAvailableColorCount() {
