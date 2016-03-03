@@ -1,5 +1,7 @@
 package com.mazdausa.test.automation.components;
 
+import org.openqa.selenium.WebDriver;
+
 public class CallToAction extends BaseComponent 
 {
 	private String copy;
@@ -12,6 +14,11 @@ public class CallToAction extends BaseComponent
 	private String hoverColor;
 	private String type;
 
+	public CallToAction(WebDriver driver) 
+	{
+		super(driver);
+	}	
+	
 	/** Test a click on this Call To Action element. */
 	public void doClick( )
 	{

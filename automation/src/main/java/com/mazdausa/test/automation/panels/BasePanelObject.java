@@ -1,10 +1,13 @@
 package com.mazdausa.test.automation.panels;
 
+import com.mazdausa.test.automation.BaseWebObject;
 import com.mazdausa.test.automation.components.*;
 
 import java.util.List;
 
-public class BasePanel implements Panel 
+import org.openqa.selenium.WebDriver;
+
+public class BasePanelObject extends BaseWebObject implements Panel 
 {
 	
 	private String title;
@@ -12,6 +15,20 @@ public class BasePanel implements Panel
 	private String locationUrl;
 	private String xPath;
 	private List<Component> components;
+
+	public BasePanelObject()
+	{
+
+	}
+	
+		
+	
+	public BasePanelObject(WebDriver driver)
+	{
+		super.setWebDriver(driver);
+	}
+	
+	
 	
 	public String getTitle() {
 		return title;

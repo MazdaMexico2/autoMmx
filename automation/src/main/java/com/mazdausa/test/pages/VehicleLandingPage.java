@@ -1,6 +1,8 @@
 package com.mazdausa.test.pages;
 
 import com.mazdausa.test.automation.components.*;
+import com.mazdausa.test.automation.panels.Panel;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,100 +17,123 @@ import org.openqa.selenium.support.PageFactory;
 public class VehicleLandingPage extends BasePageObject
 {	
 	private String vehicleCode;
-	
-	/* Future dynamic navigation items for flexibility. */
-	//private List navNameList;
-	//private Map navNamesXpathMap;
-	
-	private WebDriver driver;
 
-	@FindBy(how=How.ID, using="landing")
-	private WebElement overview;
-	
-	@FindBy(how=How.ID, using="subnav-specs-link")
-	private WebElement specs;
-
-	@FindBy(how=How.ID, using="nav-shop")
-	private WebElement shop;	
-	
-	//m3h_header_copy=//*[@id='overview']/div[1]/div/h3
-	@FindBy(how=How.XPATH, using="//*[@id='overview']/div[1]/div/h3")
-	private WebElement headerCopy;	
-			
-	//m3h_disclaimer_copy=html/body/footer/div/div[2]/div/div/div
-	//*[@id="garage-subnav-container"]/div/div[1]/h3/span
-	@FindBy(how=How.XPATH, using="//*[@id=\"garage-subnav-container\"]/div/div[1]/h3/span")
-	private WebElement priceDisclaimerWebElement;				
-	
-    /* Commented out for now because the Search Inventory nav link does not yet have an ID attribute. */
-    //@FindBy(how=How.ID, using="search-inventory")
-    //private WebElement searchInventory;
-
-    //@FindBy(how=How.ID, using="build-and-price")
-    //private WebElement build;
-
-
-	/**
-	 * Constructor.  Initializes WebElements on pageUrl.
-	 * @param driver
-	 * @param pageUrl
-	 */
-	public VehicleLandingPage(WebDriver driver, String pageUrl) 
-	{
-		this.driver = driver;
-		this.pageUrl = pageUrl;
-		driver.get(this.pageUrl);
+	private Panel vehicleNav;
+	private Panel overviewPanel;
+	private Panel rotatePanel;
+	private Panel accoladesPanel;
+	private Panel galleryPanel;
+	private Panel skyactivPanel;
+	private Panel interiorDesignPanel;
+	private Panel cargoSeatingPanel;
+	private Panel comparisonPanel;
+	private Panel allWheelPanel;
+	private Panel kodoPanel;
+	private Panel btvPanel;
 		
-		System.out.println("PageUrl = " + this.pageUrl);
-				
-		//Initialize Elements
-	    PageFactory.initElements(driver, this);
-	    
-	    System.out.println("Current URL = " + this.driver.getCurrentUrl());
 
-	}	
-	
-
-	public Disclaimer getPriceDisclaimer()
-	{
-		/* EXAMPLE:
-		 * <span class="tooltip-disclaimer-link"
-		 * 	data-disclaimer-id="#topNavPriceDisclaimerM3H" 
-		 * 	data-disclaimer-desktop-parent-id="body">*</span> 
-		 */
-		
-		
-		
-		Disclaimer priceDisclaimer = new Disclaimer();
-		System.out.println("Price Disclaimer = " + this.priceDisclaimerWebElement.toString());
-		System.out.println("Price Disclaimer Class = " + this.priceDisclaimerWebElement.getClass());
-		
-		priceDisclaimer.setName(this.priceDisclaimerWebElement.getAttribute("data-disclaimer-id"));
-		System.out.println("Price Disclaimer Name = " + priceDisclaimer.getName());
-		
-		return priceDisclaimer;
+	public String getVehicleCode() {
+		return vehicleCode;
 	}
-	
-	/* ********************************************************************************** */
-	/* Go through the list of nav elements, click, and check to make sure page displayed. */
-    
-	/**
-	 * Test the Overview link in the VLP sub nav.
-	 * @return
-	 */	
-	public void clickOverviewLink()
-	{
-		System.out.println("Getting ready to click Overview Link...");
-		System.out.println("Overview Item: " + overview.toString());
-		overview.click();
+
+	public void setVehicleCode(String vehicleCode) {
+		this.vehicleCode = vehicleCode;
 	}
-	
-	/**
-	 * Test the Specs link in the VLP sub nav.
-	 */
-	public void clickSpecsLink()
-	{
-		specs.click();	
+
+	public Panel getVehicleNav() {
+		return vehicleNav;
+	}
+
+	public void setTertiaryNav(Panel tertiaryNav) {
+		this.vehicleNav = tertiaryNav;
+	}
+
+	public Panel getOverviewPanel() {
+		return overviewPanel;
+	}
+
+	public void setOverviewPanel(Panel overviewPanel) {
+		this.overviewPanel = overviewPanel;
+	}
+
+	public Panel getRotatePanel() {
+		return rotatePanel;
+	}
+
+	public void setRotatePanel(Panel rotatePanel) {
+		this.rotatePanel = rotatePanel;
+	}
+
+	public Panel getAccoladesPanel() {
+		return accoladesPanel;
+	}
+
+	public void setAccoladesPanel(Panel accoladesPanel) {
+		this.accoladesPanel = accoladesPanel;
+	}
+
+	public Panel getGalleryPanel() {
+		return galleryPanel;
+	}
+
+	public void setGalleryPanel(Panel galleryPanel) {
+		this.galleryPanel = galleryPanel;
+	}
+
+	public Panel getSkyactivPanel() {
+		return skyactivPanel;
+	}
+
+	public void setSkyactivPanel(Panel skyactivPanel) {
+		this.skyactivPanel = skyactivPanel;
+	}
+
+	public Panel getInteriorDesignPanel() {
+		return interiorDesignPanel;
+	}
+
+	public void setInteriorDesignPanel(Panel interiorDesignPanel) {
+		this.interiorDesignPanel = interiorDesignPanel;
+	}
+
+	public Panel getCargoSeatingPanel() {
+		return cargoSeatingPanel;
+	}
+
+	public void setCargoSeatingPanel(Panel cargoSeatingPanel) {
+		this.cargoSeatingPanel = cargoSeatingPanel;
+	}
+
+	public Panel getComparisonPanel() {
+		return comparisonPanel;
+	}
+
+	public void setComparisonPanel(Panel comparisonPanel) {
+		this.comparisonPanel = comparisonPanel;
+	}
+
+	public Panel getAllWheelPanel() {
+		return allWheelPanel;
+	}
+
+	public void setAllWheelPanel(Panel allWheelPanel) {
+		this.allWheelPanel = allWheelPanel;
+	}
+
+	public Panel getKodoPanel() {
+		return kodoPanel;
+	}
+
+	public void setKodoPanel(Panel kodoPanel) {
+		this.kodoPanel = kodoPanel;
+	}
+
+	public Panel getBtvPanel() {
+		return btvPanel;
+	}
+
+	public void setBtvPanel(Panel btvPanel) {
+		this.btvPanel = btvPanel;
 	}
 	
 	
