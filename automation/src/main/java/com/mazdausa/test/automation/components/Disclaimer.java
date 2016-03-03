@@ -1,6 +1,11 @@
 package com.mazdausa.test.automation.components;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 public class Disclaimer extends BaseComponent {
+
 
 	private String asteriskColor;
 	private String targetUrl;
@@ -10,10 +15,33 @@ public class Disclaimer extends BaseComponent {
 	private String copyColor;
 	private String copy;
 	
-	/** */
-	public void openDisclaimer()
+	/**
+	 * 
+	 * @param driver
+	 */
+	public Disclaimer(WebDriver driver) 
 	{
+		super(driver);
+	}
+	
+	/** 
+	 * Open the Disclamer and validate that the popup did display.
+	 * The returned boolean indicates if the Disclaimer opened successfully. 
+	 * 
+	 */
+	public boolean openDisclaimer(String xpath)
+	{
+		boolean didOpen = false;
 		
+		// Find the WebElement that opens the Disclaimer
+		WebElement openDisclaimer = driver.findElement(By.xpath(xpath));
+		
+		// Click to open the Disclaimer 
+		openDisclaimer.click();
+
+		// Validate that the Disclaimer did open and set didOpen appropriately
+		
+		return didOpen;		
 	}
 	
 	/** */

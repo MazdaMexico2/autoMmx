@@ -9,13 +9,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import com.mazdausa.test.automation.cases.ClickVerificationTest;
+import com.mazdausa.test.automation.cases.SearchContext;
+import com.mazdausa.test.automation.cases.SwitchContextTest;
 import com.mazdausa.test.automation.components.Disclaimer;
+import com.mazdausa.test.automation.panels.OverviewPanel;
 import com.mazdausa.test.pages.PageObject;
 //import com.mazdausa.test.automation.components.CopyTest;
-import com.mazdausa.test.pages.VehicleLandingPage;
+//import com.mazdausa.test.pages.VehicleLandingPage;
 import com.mazdausa.test.util.TestUtil;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Hello world!
@@ -65,27 +70,49 @@ public class App {
 		}
 
 		// Create a new instance of a driver
-		WebDriver prodDriver = new HtmlUnitDriver();
+		WebDriver prodDriver = new FirefoxDriver();
+		
+		prodDriver.get(homePageUrlProd);
 		
 		/* Set up Implicit Wait time before throwing an exception.
 		 * See:  http://toolsqa.com/selenium-webdriver/wait-commands/
 		 */
 		prodDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		
+		prodDriver.get(props.getProperty("musa_homepage_frameId"));
+		
+		SwitchContextTest switchContext = new SwitchContextTest(prodDriver);
+		
+		switchContext.changeContext(SearchContext.ID, props.getProperty("musa_homepage_en_buttonId"));
+		
+		
+		
+		ClickVerificationTest clickVerify = new ClickVerificationTest(prodDriver);
+		clickVerify.test(SearchContext.XPATH, "");
+		
+		// test2
+		// test3
+		
+		switchContext.backToDefault();
+		
+		
 
 		/*
-		 * Create a new instance of the VLP Nav page class and initialise any
+		 * Create a new instance of the VLP Nav page class and initialize any
 		 * WebElement fields in it.
 		 */
-		VehicleLandingPage vlpNavProd = new VehicleLandingPage(prodDriver, vlpProdPageUrl);
+		//VehicleLandingPage vlpNavProd = new VehicleLandingPage(prodDriver, vlpProdPageUrl);
 
 		// Check the car title to see if it matches what we expect.
-		Disclaimer priceDisclaimer = vlpNavProd.getPriceDisclaimer();
+		//Disclaimer priceDisclaimer = vlpNavProd.getPriceDisclaimer();
 
-		System.out.println("Successfully got Price Disclaimer! : " + priceDisclaimer.toString());
+		//System.out.println("Successfully got Price Disclaimer! : " + priceDisclaimer.toString());
 
 		// Get Panel names
 
 		// Get Overview panel
+		//OverviewPanel overview = new OverPanel()
 
 		// Get headline copy
 

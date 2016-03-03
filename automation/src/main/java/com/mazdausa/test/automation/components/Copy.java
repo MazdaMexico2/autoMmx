@@ -1,5 +1,7 @@
 package com.mazdausa.test.automation.components;
 
+import org.openqa.selenium.WebDriver;
+
 public class Copy extends BaseComponent 
 {
 	private String copy;
@@ -8,6 +10,11 @@ public class Copy extends BaseComponent
 	private int size ;
 	private String alignment;
 	
+	public Copy(WebDriver driver) 
+	{
+		super(driver);
+
+	}
 	
 	public boolean doesCopyMatchProd()
 	{
