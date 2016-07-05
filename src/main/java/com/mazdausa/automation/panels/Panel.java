@@ -1,4 +1,4 @@
-package panels;
+package com.mazdausa.automation.panels;
 
 /**
  * Created by gabriela.rojas on 6/29/16.

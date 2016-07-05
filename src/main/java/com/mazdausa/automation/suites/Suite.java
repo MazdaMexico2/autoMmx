@@ -1,4 +1,4 @@
-package suites;
+package com.mazdausa.automation.suites;
 
 /**
  * Created by gabriela.rojas on 6/29/16.

@@ -1,4 +1,4 @@
-package app;
+package com.mazdausa.automation.app;
 
 import java.io.InputStream;
 import java.util.Properties;
