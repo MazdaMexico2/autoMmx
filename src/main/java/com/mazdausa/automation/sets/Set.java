@@ -1,4 +1,4 @@
-package sets;
+package com.mazdausa.automation.sets;
 
 /**
  * Created by gabriela.rojas on 6/29/16.
