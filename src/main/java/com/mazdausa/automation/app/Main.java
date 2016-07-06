@@ -9,8 +9,9 @@ import java.util.Properties;
  */
 public class Main {
     //TESTING
-    //TESTING DELLYS2
+    //TESTING DELLYSGUI
     //TESTING ALI
+
 
     private static Properties config;
 
