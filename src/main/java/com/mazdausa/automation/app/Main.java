@@ -12,7 +12,7 @@ public class Main {
     private static Properties config;
 
     public static void main(String[] args) {
-        System.out.println("Hello Tester!" );
+        System.out.println("Mazdausa.com 2.0 Automation Test!" );
         Utils utils = new Utils();
 
         //Parse arguments into map
