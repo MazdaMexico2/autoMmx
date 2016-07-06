@@ -11,6 +11,24 @@
 .idea/dictionaries
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
+vcs.xml
+scala.xml
+mavenVersion.xml
+web-browsers.xml
+other.xml
+_windows/hg.xml
+_windows/git.xml
+_windows/keymap.xml
+_windows/laf.xml
+_windows/path.macros.xml
+inspection/Default.xml
+IntelliLang.xml
+debugger.xml
+github_settings.xml
+gradle.run.settings.xml
+ide.general.xml
+
+
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
