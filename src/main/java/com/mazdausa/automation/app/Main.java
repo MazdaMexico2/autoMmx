@@ -8,6 +8,7 @@ import java.util.Properties;
  * Created by gabriela.rojas on 6/28/16.
  */
 public class Main {
+    //TESTING
 
     private static Properties config;
 
