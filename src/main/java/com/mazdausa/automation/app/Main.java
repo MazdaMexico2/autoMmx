@@ -8,12 +8,13 @@ import java.util.Properties;
  * Created by gabriela.rojas on 6/28/16.
  */
 public class Main {
-    //TESTING
-    //TESTING DELLYSGUI
-    //TESTING ALI
-    //TEST SEBAS
-// TEST PABLO
-    // TEST VINCE 3
+    /* TESTING
+    TESTING DELLYSGUI
+    TESTING ALI
+    TEST SEBAS
+    TEST PABLO
+    TEST VINCE4
+     */
 
     private static Properties config;
 
