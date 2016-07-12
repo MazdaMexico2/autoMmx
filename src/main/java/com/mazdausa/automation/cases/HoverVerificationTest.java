@@ -1,10 +1,9 @@
 package com.mazdausa.automation.cases;
 
 /**
- * Created by gabriela.rojas on 6/29/16.
+ * Created by gabriela.rojas on 7/8/16.
  */
-public class LinkVerificationTest extends TestCase {
-
+public class HoverVerificationTest extends TestCase {
     @Override
     public void prepare() {
 
