@@ -15,12 +15,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * Created by gabriela.rojas on 6/28/16.
  */
 public class Main {
-    //TESTING
-    //TESTING DELLYSGUI
-    //TESTING ALI
-    //TEST SEBAS
-// TEST PABLO
-    // TEST VINCE
+    /* TESTING
+    TESTING DELLYSGUI
+    TESTING ALI
+    TEST SEBAS
+    TEST PABLO
+    TEST VINCE4
+     */
 
     private static Properties config;
 
