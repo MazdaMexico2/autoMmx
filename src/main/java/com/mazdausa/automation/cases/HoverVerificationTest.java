@@ -1,5 +1,6 @@
 package com.mazdausa.automation.cases;
 
+import com.mazdausa.automation.app.ExecState;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -16,17 +17,13 @@ public class HoverVerificationTest extends TestCase {
 
     private WebElement element;
 
-    Utils utils = new Utils();
 
-   public HoverVerificationTest(WebDriver webDriver) {
-        utils.setDriver(webDriver);
+   public HoverVerificationTest() {
+
     }
-
 
     @Override
     public void prepare() {
-
-
 
     }
 
@@ -53,7 +50,7 @@ public class HoverVerificationTest extends TestCase {
         for(WebElement element: elements){
             try {
                 String initialPropertyValue = element.getCssValue(search_property);
-                Actions action = new Actions(utils.driver);
+                Actions action = new Actions(ExecState.getDriver());
                 action.moveToElement(element).build().perform();
                 Thread.sleep(1000);
                 String hoveredPropertyValue = element.getCssValue(search_property);

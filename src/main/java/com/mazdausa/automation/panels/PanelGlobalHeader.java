@@ -1,6 +1,8 @@
 package com.mazdausa.automation.panels;
 
+import com.mazdausa.automation.app.ExecState;
 import com.mazdausa.automation.cases.HoverVerificationTest;
+import com.mazdausa.automation.cases.LinkVerificationTest;
 import com.mazdausa.automation.panels.PanelGlobalHeader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -13,20 +15,31 @@ import java.util.Properties;
  */
 public class PanelGlobalHeader extends Panel {
 
-    public PanelGlobalHeader(){}
+    private WebDriver driver;
+
+    public PanelGlobalHeader(){
+
+        driver = ExecState.getDriver();
+        props = ExecState.getProps();
+        this.execute();
+    }
 
 
-    public boolean Execute( WebDriver prodDriver, Properties props)  {
+    public void execute()  {
 
-        System.out.println("Starting Suite1");
+        System.out.println("Starting PanelGlobalHeader");
 
         //hover verification globalHeader parent
-        WebElement globalHeaderlink = prodDriver.findElement(By.xpath(props.getProperty("globalheader_parent")));
-        HoverVerificationTest globalHoverParent = new HoverVerificationTest(prodDriver);
+        WebElement globalHeaderlink = driver.findElement(By.xpath(props.getProperty("globalheader_parent")));
+        HoverVerificationTest globalHoverParent = new HoverVerificationTest();
         Boolean globaHoverResult = globalHoverParent.testCollection(globalHeaderlink, "tag", "a", "color");
-        //System.out.println("GlobalVehiclelink: " + ((globaHoverResult) ? "PASS" : "FAIL"));
+        System.out.println("Global Navigation Hover: " + ((globaHoverResult) ? "PASS" : "FAIL"));
 
-        return globaHoverResult;
+        //Mazda_Logo Link verification
+        WebElement globalHeaderlogo = driver.findElement(By.xpath(props.getProperty("mazda_logo")));
+        LinkVerificationTest globalLogoLink = new LinkVerificationTest();
+        Boolean globalLogoResult = globalLogoLink.testLink(globalHeaderlogo, "class", "mazda-logo__desktop",props.getProperty("musa_homepage_url_prod"),false);
+        System.out.println("GlobalLogolink: " + ((globalLogoResult) ? "PASS" : "FAIL"));
 
     }
 

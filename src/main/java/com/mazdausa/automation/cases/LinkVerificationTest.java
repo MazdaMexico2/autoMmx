@@ -1,15 +1,25 @@
 package com.mazdausa.automation.cases;
 
+import com.mazdausa.automation.app.ExecState;
 import com.mazdausa.automation.app.Utils;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import java.util.ArrayList;
 
 /**
  * Created by gabriela.rojas on 6/29/16.
  */
 public class LinkVerificationTest extends TestCase {
-    Utils utils = new Utils();
+
+    private WebDriver driver;
+
+    public LinkVerificationTest(){
+        driver = ExecState.getDriver();
+    }
     @Override
     public void prepare() {
 
@@ -20,43 +30,34 @@ public class LinkVerificationTest extends TestCase {
         return false;
     }
 
-//    public class LinkVerificationTest extends BaseTest {
-//
-//        private WebElement element = null;
-//
-//        public LinkVerificationTest(WebDriver webDriver) {
-//            this.setDriver(webDriver);
-//        }
-//        public Boolean test(int searchContext, String contextValue, String targetURL, boolean alertBoolean) {
-//
-//            try {
-//                SearchContext clickLink = new SearchContext(searchContext, contextValue);
-//                element = getWebElement(clickLink);
-//                element.click();
-//                try {
-//                    Thread.sleep(2500);
-//                    if (alertBoolean) {
-//                        Alert alert = driver.switchTo().alert();
-//                        alert.accept();
-//                    }
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                if (targetURL.compareTo(driver.getCurrentUrl()) == 0) {
-//                    testResult = true;
-//                } else {
-//                    testResult = false;
-//                    System.out.println("Target URL = " + targetURL);
-//                    System.out.println("Current URL = " + driver.getCurrentUrl());
-//                }
-//            } catch (Exception e) {
-//                testResult = false;
-//                System.out.println(e);
-//                e.printStackTrace();
-//            }
-//            return testResult;
-//        }
+    public boolean testLink(WebElement element, String search_type, String search_value, String targetURL, boolean alertBoolean) {
+        Boolean test_result = false;
+        switch (search_type){
+            case "tag":
+                element = driver.findElement(By.tagName(search_value));
+                break;
+            case "class":
+                element = driver.findElement(By.className(search_value));
+                break;
+            default:
+              //  elements = new ArrayList<WebElement>();
+                break;
+        }
 
+            try {
+                element.click();
+                if (targetURL.compareTo(driver.getCurrentUrl()) == 0) {
+                    test_result = true;
+            } else {
+                    test_result = false;
+                System.out.println("Target URL = " + targetURL);
+                System.out.println("Current URL = " + driver.getCurrentUrl());
+            }
 
+            } catch(Exception ex) {
+                System.out.println(ex.getMessage());
 
+            }
+        return test_result;
     }
+}

@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Properties;
 import com.mazdausa.automation.*;
 import com.mazdausa.automation.cases.HoverVerificationTest;
+import com.mazdausa.automation.cases.LinkVerificationTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,20 +34,14 @@ public class Main {
         //Utils Class we are uploading the properties file with the project variables
         Utils utils = new Utils();
         Properties props=utils.getConfigProperties("data.properties"); // archivo de propiedades
+        ExecState.setProps(props);
 
         //Webdriver declaration, page assignment
         String ProdPageUrl; //declare the string
-        WebDriver prodDriver = new FirefoxDriver(); // webdriver creation
+        WebDriver driver = new FirefoxDriver(); // webdriver creation
+        ExecState.setDriver(driver);
         ProdPageUrl = props.getProperty("musa_homepage_url_prod"); // site load
-        prodDriver.get(ProdPageUrl); //site load
-
-        //hover verification globalHeader parent
-        WebElement globalHeaderlink = prodDriver.findElement(By.xpath(props.getProperty("globalheader_parent")));
-        HoverVerificationTest globalHoverParent = new HoverVerificationTest(prodDriver);
-        Boolean globaHoverResult = globalHoverParent.testCollection(globalHeaderlink, "tag", "a", "color");
-        System.out.println("GlobalVehiclelink: " + ((globaHoverResult) ? "PASS" : "FAIL"));
-
-
+        driver.get(ProdPageUrl); //site load
 
 
         /* Parse arguments into map */
@@ -67,10 +62,10 @@ public class Main {
         //Set output type
         //Set console_output method
 
-        ArrayList<String> suites = utils.getStringList(config.getProperty("suites"));
+        ArrayList<String> sections = utils.getStringList(config.getProperty("sections"));
         try {
-            Class current_suite = Class.forName("com.mazdausa.automation.testables." + suites.get(0));
-           Object suite = current_suite.newInstance();
+            Class current_section = Class.forName("com.mazdausa.automation.panels." + sections.get(0));
+            Object section = current_section.newInstance();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
@@ -80,7 +75,7 @@ public class Main {
         }
 
         System.out.println(arguments.get("--config"));
-        System.out.println(arguments.get("--output"));
+     //   System.out.println(arguments.get("--output"));
 
         //WebDriver appDriver = new FirefoxDriver();
     }
