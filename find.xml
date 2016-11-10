@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Project 'autotest2'" />
-    <option name="defaultScopeName" value="Project 'autotest2'" />
-    <option name="SEARCH_SCOPE" value="Project 'autotest2'" />
+    <option name="customScope" value="File '[autotest2] - ...\logging.properties'" />
+    <option name="defaultScopeName" value="File '[autotest2] - ...\logging.properties'" />
+    <option name="SEARCH_SCOPE" value="File '[autotest2] - ...\logging.properties'" />
   </component>
 </application>
