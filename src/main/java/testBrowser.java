@@ -28,8 +28,9 @@ public class testBrowser {
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
         //driver = new SafariDriver();
-
+// test pablo
         //Test Alina #2
+        //Test Vince
 
     }
 
