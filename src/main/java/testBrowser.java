@@ -32,6 +32,8 @@ public class testBrowser {
         //driver = new SafariDriver();
 // test pablo
         //Test Alina #2
+        //Test Vince
+        //Test Nancy
 
     }
 
