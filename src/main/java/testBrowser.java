@@ -25,6 +25,8 @@ public class testBrowser {
     @BeforeMethod
     public void setUp() throws IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
+        //Pablo´s config
+        //   System.setProperty("webdriver.chrome.driver", "C:\\Users\\Pablo\\IdeaProjects\\autoMmx\\chromedriver.exe");
         driver = new ChromeDriver();
         //driver = new FirefoxDriver();
         //driver = new SafariDriver();
