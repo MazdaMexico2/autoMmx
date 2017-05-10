@@ -20,3 +20,6 @@ hs_err_pid*
 /colors.scheme.xml
 /_windows/
 /.idea/
+/baseRefactoring.xml
+/diff.xml
+
