@@ -22,4 +22,5 @@ hs_err_pid*
 /.idea/
 /baseRefactoring.xml
 /diff.xml
-
+/editor.xml
+/inspection/
