@@ -25,12 +25,11 @@ public class testBrowser {
     @BeforeMethod
     public void setUp() throws IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
-        driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
+        //driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         //driver = new SafariDriver();
-// test pablo
+
         //Test Alina #2
-        //Test Vince
 
     }
 
