@@ -10,3 +10,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/web-browsers.xml
+/vcs.xml
+/ui.lnf.xml
+/parameter.hints.xml
+/IntelliLang.xml
+/gradle.run.settings.xml
+/debugger.xml
+/colors.scheme.xml
+/_windows/
+/.idea/
