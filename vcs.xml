@@ -6,6 +6,10 @@
           <option name="url" value="https://github.com/MazdaMexico2/autoMmx" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="http://github.com" />
+          <option name="userName" value="vdelupio@gmail.com" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="C:\Users\vince\IdeaProjects" />
