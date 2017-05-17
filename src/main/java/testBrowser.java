@@ -24,9 +24,11 @@ public class testBrowser {
 
     @BeforeMethod
     public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
-        //driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+       // System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+       // driver = new ChromeDriver();
+      driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2
@@ -50,7 +52,7 @@ public class testBrowser {
 
     @AfterMethod
     public void tearDown() {
-        driver.close();
+       // driver.close();
     }
 
 }
