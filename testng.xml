@@ -4,6 +4,7 @@
     <test name="Test">
         <classes>
             <class name="testBrowser"/>
+            <class name="headerDropdown"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
