@@ -14,15 +14,14 @@ import org.openqa.selenium.WebElement;
 
 public class LinkVerificationTest {
 
-    private WebDriver driver;
     private String type;
     private WebElement element;
     private String link;
 
 
 
-    public void clicklink (String id, int wait){
-        WebElement element = driver.findElement(By.cssSelector(id));
+    public void clicklink (String cssselector, int wait, WebDriver driver){
+        WebElement element = driver.findElement(By.cssSelector(cssselector));
         element.click();
         try {
             Thread.sleep(wait);
@@ -34,18 +33,13 @@ public class LinkVerificationTest {
 
 
 
-    public boolean linkcompare (String reference) {
-        Boolean test_result = false;
-        if(driver.getCurrentUrl().equals(reference)){
-            test_result = true;
-        }else{
-            test_result = false;
+    public boolean linkcompare (String reference, WebDriver driver ) {
 
-    }
+        return driver.getCurrentUrl().equals(reference);
 
-        return test_result;
 }
-    public void returnpage (String linkreturn){
+
+    public void returnpage (String linkreturn, WebDriver driver){
 
         driver.get(linkreturn);
 
