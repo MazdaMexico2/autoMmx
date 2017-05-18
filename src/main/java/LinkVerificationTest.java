@@ -22,7 +22,7 @@ public class LinkVerificationTest {
 
 
     public void clicklink (String id, int wait){
-        WebElement element = driver.findElement(By.id(id));
+        WebElement element = driver.findElement(By.cssSelector(id));
         element.click();
         try {
             Thread.sleep(wait);
