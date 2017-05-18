@@ -25,6 +25,10 @@ public class headerDropdown {
     @BeforeMethod
     public void setUp() throws IOException {
         System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        // PC path
+      /*  System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");*/
         //driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();
