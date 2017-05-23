@@ -5,6 +5,9 @@
         <classes>
             <class name="testBrowser"/>
             <class name="headerDropdown"/>
+            <class name="imagelinkverification"/>
+            <class name="vehiculosdrpodowlinktest"/>
+
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
