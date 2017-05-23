@@ -24,8 +24,8 @@ public class vehiculosdrpodowlinktest {
         // System.setProperty("webdriver.chrome.driver", "chromedriver");
 
         // PC path
-        // System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+        //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
         //driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();
@@ -98,9 +98,17 @@ public class vehiculosdrpodowlinktest {
 
         // Mazda MX5
 
-
+        link_test.clicklink(".mdp-navigation-global__menu-link-1",2000, driver);
+        link_test.clicklink("a[href*='https://www.mazda.mx:443/vehiculos/mx-5']",2000, driver);
+        link_test.linkcompare("https://www.mazda.mx/vehiculos/mx-5", driver);
+        link_test.returnpage("https://www.mazda.mx/", driver);
 
         // Mazda MX5 RF
+
+        link_test.clicklink(".mdp-navigation-global__menu-link-1",2000, driver);
+        link_test.clicklink("a[href*='https://www.mazda.mx:443/vehiculos/mx-5-rf']",2000, driver);
+        link_test.linkcompare("https://www.mazda.mx/vehiculos/mx-5-rf", driver);
+        link_test.returnpage("https://www.mazda.mx/", driver);
 
 
     }
