@@ -17,6 +17,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 //pablo
 public class testBrowser {
+    private LinkVerificationTest link_test;
 
 
     WebDriver driver;
@@ -24,7 +25,10 @@ public class testBrowser {
 
     @BeforeMethod
     public void setUp() throws IOException {
-       // System.setProperty("webdriver.chrome.driver", "chromedriver");
+
+        //Mac path
+        // System.setProperty("webdriver.chrome.driver", "chromedriver");
+       // PC path
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
         System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
        // driver = new ChromeDriver();
@@ -54,5 +58,4 @@ public class testBrowser {
     public void tearDown() {
        // driver.close();
     }
-
 }
