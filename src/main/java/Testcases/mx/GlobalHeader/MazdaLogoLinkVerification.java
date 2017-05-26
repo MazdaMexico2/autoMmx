@@ -1,29 +1,37 @@
-/**
+package Testcases.mx.GlobalHeader; /**
  * Created by Pablo on 18/5/2017.
  */
-
-import org.openqa.selenium.By;
+import Testsuites.LinkVerificationTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import Testsuites.ReadProperties;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
 
 
-public class imagelinkverification {
+public class MazdaLogoLinkVerification {
 
+    private Properties propsmmx;
     private LinkVerificationTest link_test;
 
     WebDriver driver;
     Properties configFile;
+
+    @BeforeMethod
+    public void readprops() throws IOException {
+
+        ReadProperties readprops = new ReadProperties();
+
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalFooter.properties");
+
+    }
+
 
     @BeforeMethod
     public void setUp() throws IOException {
@@ -46,7 +54,7 @@ public class imagelinkverification {
 
 
         /* Define URL to test */
-        driver.get("https://www.mazda.mx");
+        driver.get(propsmmx.getProperty("prod_home_url"));
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();

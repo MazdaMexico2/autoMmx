@@ -3,10 +3,10 @@
 <suite name="Suite" parallel="tests">
     <test name="Test">
         <classes>
-            <class name="testBrowser"/>
-            <class name="headerDropdown"/>
-            <class name="imagelinkverification"/>
-            <class name="vehiculosdrpodowlinktest"/>
+            <class name="Browsers.testBrowser"/>
+            <class name="Testcases.mx.GlobalHeader.headerDropdown"/>
+            <class name="Testcases.mx.GlobalHeader.MazdaLogoLinkVerification"/>
+            <class name="Testcases.mx.GlobalHeader.vehiculosdrpodowlinktest"/>
 
         </classes>
     </test> <!-- Test -->

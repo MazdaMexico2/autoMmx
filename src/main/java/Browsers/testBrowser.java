@@ -1,16 +1,13 @@
-/**
+package Browsers; /**
  * Created by alina.viquez on 5/1/17.
  */
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
+import Testsuites.LinkVerificationTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

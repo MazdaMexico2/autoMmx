@@ -1,14 +1,15 @@
-import org.openqa.selenium.By;
+package Testcases.mx.footer;
+
+import Testsuites.ReadProperties;
+import Testsuites.LinkVerificationTest;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
-import java.util.Properties;
 
 /**
  * Created by nserralde on 5/19/17.
@@ -18,16 +19,19 @@ public class footerTestLinks {
     private LinkVerificationTest link_test;
 
 
+    private ReadProperties propsmmx;
+
+
     WebDriver driver;
 
     @BeforeMethod
     public void setUp() throws IOException {
 
         //Mac path
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "chromedriver");
         // PC path
         //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-        //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
         //driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();
@@ -51,7 +55,7 @@ public class footerTestLinks {
         Thread.sleep(5000);
 
         //distribuidores
-        link_test.clicklink(".mdp-navigation-footer__distributors",3000, driver);
+        link_test.clicklink("distribuidores_footer",3000, driver);
         link_test.linkcompare("https://www.mazda.mx/localizar-distribuidor", driver);
         link_test.returnpage("https://www.mazda.mx/", driver);
 
