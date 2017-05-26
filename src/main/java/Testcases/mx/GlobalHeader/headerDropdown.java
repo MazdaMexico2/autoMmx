@@ -2,6 +2,7 @@ package Testcases.mx.GlobalHeader; /**
  * Created by alina.viquez on 5/1/17.
  */
 
+import Testsuites.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,16 +19,26 @@ import java.util.Properties;
 //pablo
 public class headerDropdown {
 
+    private Properties propsmmx;
+
     WebDriver driver;
     Properties configFile;
 
     @BeforeMethod
-    public void setUp() throws IOException {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+    public void readprops() throws IOException {
 
-        // PC path
-        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-        //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        ReadProperties readprops = new ReadProperties();
+
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
+
+    }
+
+    @BeforeMethod
+    public void setUp() throws IOException {
+
+        ReadProperties readprops = new ReadProperties();
+
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
         //driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();

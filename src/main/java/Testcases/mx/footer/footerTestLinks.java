@@ -10,6 +10,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.Properties;
 
 /**
  * Created by nserralde on 5/19/17.
@@ -18,20 +19,29 @@ public class footerTestLinks {
 
     private LinkVerificationTest link_test;
 
-
-    private ReadProperties propsmmx;
+    private Properties propsmmx;
 
 
     WebDriver driver;
 
     @BeforeMethod
+    public void readprops() throws IOException {
+
+        ReadProperties readprops = new ReadProperties();
+
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalFooter.properties");
+
+    }
+
+    @BeforeMethod
     public void setUp() throws IOException {
 
-        //Mac path
-        //System.setProperty("webdriver.chrome.driver", "chromedriver");
-        // PC path
-        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-        System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        if( propsmmx.getProperty("device") == "PC"){
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+        }
         //driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();

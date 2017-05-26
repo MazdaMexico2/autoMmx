@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import Testsuites.LinkVerificationTest;
+import Testsuites.ReadProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,18 +17,32 @@ import org.testng.annotations.Test;
 public class testBrowser {
     private LinkVerificationTest link_test;
 
-
     WebDriver driver;
     Properties configFile;
+
+    private Properties propsmmx;
+
+
+    @BeforeMethod
+    public void readprops() throws IOException {
+
+        ReadProperties readprops = new ReadProperties();
+
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
+
+    }
+
 
     @BeforeMethod
     public void setUp() throws IOException {
 
-        //Mac path
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
-       // PC path
-        //System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-        //System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        if( propsmmx.getProperty("device") == "PC"){
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+        }
+
        // driver = new ChromeDriver();
       driver = new FirefoxDriver();
         //driver = new SafariDriver();
