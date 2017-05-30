@@ -7,6 +7,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,6 +25,7 @@ public class footerTestLinks {
 
     WebDriver driver;
     Properties configFile;
+
     @BeforeMethod
     public void readprops() throws IOException {
 
@@ -42,8 +45,8 @@ public class footerTestLinks {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
 
-        // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+         driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2
@@ -80,11 +83,9 @@ public class footerTestLinks {
         link_test.clicklink(propsmmx.getProperty("twitter_link"),3000, driver);
         link_test.linkcompare(propsmmx.getProperty("twitter_url"), driver);
 
-
         //instagram
         link_test.clicklink(propsmmx.getProperty("instagram_link"),3000, driver);
         link_test.linkcompare(propsmmx.getProperty("instagram_url"), driver);
-
 
         //contactanos
         link_test.clicklink(propsmmx.getProperty("contactanos_link"),3000, driver);
@@ -100,7 +101,7 @@ public class footerTestLinks {
 
         //privacy policies
         link_test.clicklink(propsmmx.getProperty("privacy_policies_link"),3000, driver);
-        link_test.linkcompare(propsmmx.getProperty("pprod_rivacy_policies_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_privacy_policies_url"), driver);
         Thread.sleep(2000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
