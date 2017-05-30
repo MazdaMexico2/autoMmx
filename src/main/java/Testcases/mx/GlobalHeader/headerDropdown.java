@@ -24,14 +24,14 @@ public class headerDropdown {
     WebDriver driver;
     Properties configFile;
 
-    @BeforeMethod
+    /*@BeforeMethod
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
 
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
-    }
+    }*/
 
     @BeforeMethod
     public void setUp() throws IOException {
