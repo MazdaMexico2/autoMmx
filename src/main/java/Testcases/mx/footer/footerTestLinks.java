@@ -1,8 +1,10 @@
 package Testcases.mx.footer;
 
-import Testsuites.ReadProperties;
 import Testsuites.LinkVerificationTest;
+import Testsuites.ReadProperties;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -16,14 +18,11 @@ import java.util.Properties;
  * Created by nserralde on 5/19/17.
  */
 public class footerTestLinks {
-
+    private Properties propsmmx;
     private LinkVerificationTest link_test;
 
-    private Properties propsmmx;
-
-
     WebDriver driver;
-
+    Properties configFile;
     @BeforeMethod
     public void readprops() throws IOException {
 
@@ -36,15 +35,18 @@ public class footerTestLinks {
     @BeforeMethod
     public void setUp() throws IOException {
 
-        if( propsmmx.getProperty("device") == "PC"){
+        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
             System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
         } else {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
-        //driver = new ChromeDriver();
+
+        // driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();
+
+        //Test Alina #2
 
     }
 
@@ -56,7 +58,7 @@ public class footerTestLinks {
 
 
         /* Define URL to test*/
-        driver.get("https://www.mazda.mx/");
+        driver.get(propsmmx.getProperty("prod_home_url"));
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();
@@ -65,45 +67,52 @@ public class footerTestLinks {
         Thread.sleep(5000);
 
         //distribuidores
-        link_test.clicklink("distribuidores_footer",3000, driver);
-        link_test.linkcompare("https://www.mazda.mx/localizar-distribuidor", driver);
-        link_test.returnpage("https://www.mazda.mx/", driver);
+        link_test.clicklink(propsmmx.getProperty("distribuidores_footer"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_distribuidores_url"), driver);
+        Thread.sleep(2000);
+        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         //facebook
-        link_test.clicklink("a[href*='https://www.facebook.com/mazdamexico']",3000, driver);
-        link_test.linkcompare("https://www.mazda.mx/contactanos", driver);
+        link_test.clicklink(propsmmx.getProperty("facebook_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("facebook_url"), driver);
 
         //twitter
-        link_test.clicklink("a[href*='https://twitter.com/mazdaoficial']",3000, driver);
-        link_test.linkcompare("https://twitter.com/mazdaoficial", driver);
+        link_test.clicklink(propsmmx.getProperty("twitter_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("twitter_url"), driver);
+
 
         //instagram
-        link_test.clicklink("a[href*='https://www.instagram.com/mazdaoficial/']",3000, driver);
-        link_test.linkcompare("https://www.instagram.com/mazdaoficial/", driver);
+        link_test.clicklink(propsmmx.getProperty("instagram_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("instagram_url"), driver);
+
 
         //contactanos
-        link_test.clicklink("a[href*='/contactanos']",3000, driver);
-        link_test.linkcompare("https://www.mazda.mx/contactanos", driver);
-        link_test.returnpage("https://www.mazda.mx/", driver);
+        link_test.clicklink(propsmmx.getProperty("contactanos_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_contactanos_url"), driver);
+        Thread.sleep(2000);
+        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         //terms and conditions
-        link_test.clicklink("a[href*='/site/terminos-y-condiciones']",3000, driver);
-        link_test.linkcompare("https://www.facebook.com/mazdamexico", driver);
-        link_test.returnpage("https://www.mazda.mx/", driver);
+        link_test.clicklink(propsmmx.getProperty("terms_conditions_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_terms_conditions_url"), driver);
+        Thread.sleep(2000);
+        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         //privacy policies
-        link_test.clicklink("a[href*='/site/politica-de-privacidad']",3000, driver);
-        link_test.linkcompare("https://www.mazda.mx/site/politica-de-privacidad", driver);
-        link_test.returnpage("https://www.mazda.mx/", driver);
+        link_test.clicklink(propsmmx.getProperty("privacy_policies_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("pprod_rivacy_policies_url"), driver);
+        Thread.sleep(2000);
+        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         //site map
-        link_test.clicklink("a[href*='/mapa-sitio']",3000, driver);
-        link_test.linkcompare("https://www.mazda.mx/mapa-sitio", driver);
-        link_test.returnpage("https://www.mazda.mx/", driver);
+        link_test.clicklink(propsmmx.getProperty("site_map_link"),3000, driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_site_map_url"), driver);
+        Thread.sleep(2000);
+        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
     }
 
-    @AfterMethod
+   @AfterMethod
     public void tearDown() {
 
         driver.quit();

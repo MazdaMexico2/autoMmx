@@ -4,7 +4,6 @@ import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,15 +33,19 @@ public class vehiculosdrpodowlinktest {
     @BeforeMethod
     public void setUp() throws IOException {
 
+        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
             System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-           // System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+        }
 
-          //  System.setProperty("webdriver.chrome.driver", "chromedriver");
-
-       driver = new ChromeDriver();
-      //  driver = new FirefoxDriver();
+        // driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         //driver = new SafariDriver();
-        configFile = new Properties();
+
+        //Test Alina #2
+
     }
 
     @Test
