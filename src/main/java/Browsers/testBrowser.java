@@ -10,6 +10,7 @@ import Testsuites.ReadProperties;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -43,8 +44,8 @@ public class testBrowser {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
 
-        // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2

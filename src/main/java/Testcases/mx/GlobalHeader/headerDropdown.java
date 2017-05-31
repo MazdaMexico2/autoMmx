@@ -1,13 +1,13 @@
 package Testcases.mx.GlobalHeader; /**
  * Created by alina.viquez on 5/1/17.
  */
-
 import Testsuites.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -24,15 +24,14 @@ public class headerDropdown {
     WebDriver driver;
     Properties configFile;
 
-    /*@BeforeMethod
+    @BeforeMethod
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
 
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
-    }*/
-
+    }
     @BeforeMethod
     public void setUp() throws IOException {
 
@@ -43,8 +42,8 @@ public class headerDropdown {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
 
-        // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+         driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2
