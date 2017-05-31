@@ -24,25 +24,31 @@ public class headerDropdown {
     WebDriver driver;
     Properties configFile;
 
-    @BeforeMethod
+    /*@BeforeMethod
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
 
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
-    }
+    }*/
 
     @BeforeMethod
     public void setUp() throws IOException {
 
-        ReadProperties readprops = new ReadProperties();
+        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
+            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
+            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "chromedriver");
+        }
 
-        this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
-        //driver = new ChromeDriver();
+        // driver = new ChromeDriver();
         driver = new FirefoxDriver();
         //driver = new SafariDriver();
-        configFile = new Properties();
+
+        //Test Alina #2
+
     }
 
     @Test
