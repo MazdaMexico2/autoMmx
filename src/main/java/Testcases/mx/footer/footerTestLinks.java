@@ -2,12 +2,11 @@ package Testcases.mx.footer;
 
 import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -43,8 +42,8 @@ public class footerTestLinks {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
 
-        // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+         driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2
@@ -101,7 +100,7 @@ public class footerTestLinks {
 
         //privacy policies
         link_test.clicklink(propsmmx.getProperty("privacy_policies_link"),3000, driver);
-        link_test.linkcompare(propsmmx.getProperty("pprod_rivacy_policies_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("prod_privacy_policies_url"), driver);
         Thread.sleep(2000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 

@@ -44,8 +44,8 @@ public class MazdaLogoLinkVerification {
             System.setProperty("webdriver.chrome.driver", "chromedriver");
         }
 
-        // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
 
         //Test Alina #2
