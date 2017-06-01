@@ -11,18 +11,6 @@ import java.util.Properties;
  */
 public class ReadProperties {
 
-  /*  static Properties prop;
-    public static void loadProperties(String propertyname) {
-        prop = new Properties();
-        InputStream in = ReadProperties.class.getResourceAsStream(propertyname);
-        try {
-            prop.load(in);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }*/
-
 
     public Properties getConfigProperties(String configName) {
         Properties configProps = new Properties();
