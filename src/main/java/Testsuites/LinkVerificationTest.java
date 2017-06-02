@@ -7,6 +7,7 @@ import java.util.Properties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 
 
 /**
@@ -36,7 +37,14 @@ public class LinkVerificationTest {
 
     public boolean linkcompare (String reference, WebDriver driver ) {
 
-        return driver.getCurrentUrl().equals(reference);
+        if (driver.getCurrentUrl().equals(reference) ){
+            Reporter.log("Pass: " + reference +" <br/>");
+            return true;
+        }
+        else {
+            Reporter.log("Fail: " + reference +" <br/>");
+            return false;
+        }
 
 }
 
