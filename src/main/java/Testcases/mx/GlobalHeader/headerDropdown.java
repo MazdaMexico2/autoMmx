@@ -68,18 +68,16 @@ public class headerDropdown {
         List<WebElement> menu = driver.findElements(By.cssSelector(".mdp-navigation-global__menu ul li"));
         for(int i =0;i<menu.size();i++) {
             menu.get(i).click();
-            String elementClass= menu.get(i).getAttribute("class");
 
-            if (elementClass != null && elementClass.contains("active")){
-                menu.get(i).click();
-                System.out.print(" Dropdown of position"  + i + " displays ok ->");
-            }else{
-                System.out.print(" Drop down is not displaying or this position does not have dropdown");
+            //String elementClass= menu.get(i).getAttribute("class");
+
+            //if (elementClass != null && elementClass.contains("active")){
+            //   menu.get(i).click();
+            //   System.out.print(" Dropdown of position"  + i + " displays ok ->");
+            //}else{
+            // System.out.print(" Drop down is not displaying or this position does not have dropdown");
             }
         }
-
-    }
-
     @AfterMethod
     public void tearDown() {
 
