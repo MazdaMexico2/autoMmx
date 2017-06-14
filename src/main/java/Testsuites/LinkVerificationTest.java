@@ -55,21 +55,6 @@ public class LinkVerificationTest {
 
     }
 
-    public  void imageTest (String img, String expectedUrl, int wait, WebDriver driver){
-
-
-        WebElement im = driver.findElement(By.cssSelector(img));
-        try {
-            im.getAttribute("src");
-            Thread.sleep(wait);
-            im.equals(expectedUrl);
-            Reporter.log("Pass: " + expectedUrl + "<br>");
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
 
 
 
