@@ -61,7 +61,7 @@ public class ImageTestHomeModule1 {
         /*Maximize Window and load*/
         driver.manage().window().maximize();
 
-        /*Compare image from path*/
+        /*Compare image from path, over module 1 the image display only for mobile version in this moment by default display a video*/
         link_test.imageTest(propsmmx.getProperty("homeModule1testImgPth_prod"),propsmmx.getProperty("homeModule1testImgSrc_prod"), 2000, driver);
 
     }
