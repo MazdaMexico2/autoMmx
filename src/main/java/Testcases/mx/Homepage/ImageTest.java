@@ -5,6 +5,7 @@ import Testsuites.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,6 +13,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -46,11 +48,8 @@ public class ImageTest {
         }
 
         driver = new ChromeDriver();
-
        //driver = new FirefoxDriver();
         //driver = new SafariDriver();
-
-        //Test Alina #2
 
     }
 
@@ -72,9 +71,24 @@ public class ImageTest {
 //        jse.executeScript("window.scrollBy(0,2500)");
 //        Thread.sleep(3000);
 
-       image_test.imageTest(propsmmx.getProperty("testImgPth"),propsmmx.getProperty("testImgSrc"), 2000, driver);
+        //MODULE #3
 
+        //TOUT Mazda 6
+        jse.executeScript("window.scrollBy(0,1300)");
+        Thread.sleep(2000);
+        image_test.imageTest(propsmmx.getProperty("toutMazda6"),propsmmx.getProperty("toutMazda6Url"), 2000, driver);
 
+        //TOUT Mazda CX9
+        List<WebElement> toutList = driver.findElements(By.cssSelector(propsmmx.getProperty("toutMazdaCx9")));
+        toutList.get(1).getAttribute("src").equals(propsmmx.getProperty("toutMazdaCx9Url"));
+
+        //TOUT Mazda MX5
+        image_test.imageTest(propsmmx.getProperty("toutMazdaMx5"),propsmmx.getProperty("toutMazdaMx5Url"),2000,driver);
+
+        //MODULE #4
+
+        //Background Image Jinba Ittai
+        image_test.imageTestBkg(propsmmx.getProperty("JINBAITTAISrc"),propsmmx.getProperty("JINBAITTAIUrl"),2000,driver);
     }
 
     @AfterMethod

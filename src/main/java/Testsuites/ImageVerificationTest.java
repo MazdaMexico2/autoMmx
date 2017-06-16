@@ -9,7 +9,7 @@ import org.testng.Reporter;
  */
 public class ImageVerificationTest {
 
-    public  void imageTest (String img, String expectedUrl, int wait, WebDriver driver){
+    public void imageTest (String img, String expectedUrl, int wait, WebDriver driver){
 
 
         WebElement im = driver.findElement(By.cssSelector(img));
@@ -25,4 +25,22 @@ public class ImageVerificationTest {
 
     }
 
+    public void imageTestBkg (String img, String expectedBkg, int wait, WebDriver driver){
+
+
+        WebElement imBk = driver.findElement(By.cssSelector(img));
+        try {
+            imBk.getCssValue("background-image");
+            Thread.sleep(wait);
+            imBk.equals(expectedBkg);
+            Reporter.log("Pass: " + expectedBkg + "<br>");
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
+
+

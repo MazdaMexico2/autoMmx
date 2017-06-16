@@ -1,5 +1,6 @@
 package Testcases.mx.Homepage;
 
+import Testsuites.ImageVerificationTest;
 import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
 import org.openqa.selenium.By;
@@ -18,7 +19,7 @@ import java.util.Properties;
  */
 public class ImageTestHomeModule1 {
     private Properties propsmmx;
-    private LinkVerificationTest link_test;
+    private ImageVerificationTest link_test;
 
     WebDriver driver;
     Properties configFile;
@@ -51,7 +52,7 @@ public class ImageTestHomeModule1 {
     @Test
     public void TestImage() throws IOException, InterruptedException{
 
-        link_test = new LinkVerificationTest();
+        link_test = new ImageVerificationTest();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
