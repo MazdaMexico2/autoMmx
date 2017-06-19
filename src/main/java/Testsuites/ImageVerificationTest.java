@@ -9,34 +9,32 @@ import org.testng.Reporter;
  */
 public class ImageVerificationTest {
 
-    public void imageTest (String img, String expectedUrl, int wait, WebDriver driver){
+    public void imageTest (String img, String expectedUrl, WebDriver driver){
 
 
         WebElement im = driver.findElement(By.cssSelector(img));
         try {
             im.getAttribute("src");
-            Thread.sleep(wait);
             im.equals(expectedUrl);
             Reporter.log("Pass: " + expectedUrl + "<br>");
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            Reporter.log("Fail:" + expectedUrl + "<br>");
         }
 
     }
 
-    public void imageTestBkg (String img, String expectedBkg, int wait, WebDriver driver){
+    public void imageTestBkg (String img, String expectedBkg,  WebDriver driver){
 
 
         WebElement imBk = driver.findElement(By.cssSelector(img));
         try {
             imBk.getCssValue("background-image");
-            Thread.sleep(wait);
             imBk.equals(expectedBkg);
             Reporter.log("Pass: " + expectedBkg + "<br>");
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            Reporter.log("Fail:" + expectedBkg + "<br>");
         }
 
     }
