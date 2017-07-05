@@ -71,7 +71,7 @@ public class HomepageImageTest {
 
         //MODULE #1
         /*Compare image from path, over module 1 the image display only for mobile version in this moment by default display a video*/
-        image_test.imageTest(propsmmx.getProperty("homeModule1testImgPth_prod"),propsmmx.getProperty("homeModule1testImgSrc_prod"), driver);
+        image_test.imageTest(propsmmx.getProperty("homeModule1testImgPth_prod"),propsmmx.getProperty("homeModule1testImgSrc_prod"), driver, "Module #1");
 
 
         //MODULE #3
@@ -79,47 +79,35 @@ public class HomepageImageTest {
         //TOUT Mazda 6
         jse.executeScript("window.scrollBy(0,1300)");
         Thread.sleep(0);
-        image_test.imageTest(propsmmx.getProperty("toutMazda6"),propsmmx.getProperty("toutMazda6Url"), driver);
+        image_test.imageTest(propsmmx.getProperty("toutMazda6"),propsmmx.getProperty("toutMazda6Url"), driver,"MODULE #3:TOUT Mazda 6");
 
         //TOUT Mazda CX9
-        List<WebElement> toutList = driver.findElements(By.cssSelector(propsmmx.getProperty("toutMazdaCx9")));
-        toutList.get(1).getAttribute("src").equals(propsmmx.getProperty("toutMazdaCx9Url"));
+        image_test.imagebyposition(propsmmx.getProperty("toutMazdaCx9"),propsmmx.getProperty("toutMazdaCx9Url"),driver,"MODULE #3:TOUT Mazda CX9");
+     // List<WebElement> toutList = driver.findElements(By.cssSelector(propsmmx.getProperty("toutMazdaCx9")));
+        //toutList.get(1).getAttribute("src").equals(propsmmx.getProperty("toutMazdaCx9Url"));
 
         //TOUT Mazda MX5
-        image_test.imageTest(propsmmx.getProperty("toutMazdaMx5"),propsmmx.getProperty("toutMazdaMx5Url"),driver);
+        image_test.imageTest(propsmmx.getProperty("toutMazdaMx5"),propsmmx.getProperty("toutMazdaMx5Url"),driver,"MODULE #3:TOUT MX5");
 
         //MODULE #4
 
         //Background Image Jinba Ittai
-        image_test.imageTestBkg(propsmmx.getProperty("JINBAITTAISrc"),propsmmx.getProperty("JINBAITTAIUrl"),driver);
+        image_test.imageTestBkg(propsmmx.getProperty("JINBAITTAISrc"),propsmmx.getProperty("JINBAITTAIUrl"),driver,"MODULE #4");
 
         //MODULE #5
         // Configura
 
-        image_test.imageTest(propsmmx.getProperty("configurasrc"),propsmmx.getProperty("configuraurl"), driver);
+        image_test.imageTest(propsmmx.getProperty("configurasrc"),propsmmx.getProperty("configuraurl"), driver,"MODULE #5: Configura");
 
        //Cotiza
-      WebElement cotizar= driver.findElement(By.className((propsmmx.getProperty("cotizasrc"))));
-      WebElement imagencotizar=cotizar.findElement(By.tagName("img"));
-        System.out.println(cotizar);
-        System.out.println((imagencotizar.getAttribute("src")));
-        System.out.println(propsmmx.getProperty("cotizaurl"));
-   if (imagencotizar.getAttribute("src").equals(propsmmx.getProperty("cotizaurl"))){
-       Reporter.log("Pass: " + propsmmx.getProperty("cotizaurl")+ "<br>");
-   }
-   else{
-       Reporter.log("Fail: " + propsmmx.getProperty("cotizaurl")+ "<br>");
+       image_test.imagebytagname(propsmmx.getProperty("cotizasrc"),propsmmx.getProperty("cotizaurl"), driver,"MODULE #5: Cotiza");
 
 
-   }
-
-  /*      image_test.imageTest(propsmmx.getProperty("cotizasrc"),propsmmx.getProperty("cotizaurl"),0,driver);
-*/
    //Compara
-        image_test.imageTest(propsmmx.getProperty("comparasrc"),propsmmx.getProperty("comparaurl"),driver);
+        image_test.imageTest(propsmmx.getProperty("comparasrc"),propsmmx.getProperty("comparaurl"),driver,"MODULE #5:Compara");
 
         //MODULE #6
-        image_test.imageTestBkg(propsmmx.getProperty("skyactivimgsrc"),propsmmx.getProperty("skyactivimgurl"),driver);
+        image_test.imageTestBkg(propsmmx.getProperty("skyactivimgsrc"),propsmmx.getProperty("skyactivimgurl"),driver,"MODULE #6");
 
 
     }

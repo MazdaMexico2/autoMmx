@@ -69,36 +69,36 @@ public class compratumazdadropdownlinktest {
 
         link_test.clicklink(propsmmx.getProperty("compratumazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Compara_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Compara_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Compara_prod_url"), driver, "Global Header: Compra tu Mazda Dropdown- Compara");
+
 
         // Configura
 
         link_test.clicklink(propsmmx.getProperty("compratumazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Configura_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Configura_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Configura_prod_url"), driver,"Global Header: Compra tu Mazda Dropdown- Configura");
+
 
         // Cotizador
 
         link_test.clicklink(propsmmx.getProperty("compratumazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Cotizador_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Cotizador_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Cotizador_prod_url"), driver,"Global Header: Compra tu Mazda Dropdown- Cotizador");
+
 
         // Distribuidores
 
         link_test.clicklink(propsmmx.getProperty("compratumazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Distribuidores_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Distribuidores_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Distribuidores_prod_url"), driver,"Global Header: Compra tu Mazda Dropdown- Distribuidores");
+
 
         // Configura
 
         link_test.clicklink(propsmmx.getProperty("compratumazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Configura_button_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Configura_button_prod"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Configura_button_prod"), driver,"Global Header: Compra tu Mazda Dropdown- Configura Button");
+
 
 
 

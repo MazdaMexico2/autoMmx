@@ -69,8 +69,8 @@ public class MazdaLogoLinkVerification {
 
         //link1
      link_test.clicklink(".mazda-logo",2000, driver);
-     link_test.linkcompare("https://www.mazda.mx/", driver);
-     link_test.returnpage("https://www.mazda.mx/", driver);
+     link_test.linkcompare("https://www.mazda.mx/", driver,"Mazda Logo");
+
     // link 2
 
     }
