@@ -63,64 +63,64 @@ public class vehiculosdrpodowlinktest {
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Mazda2_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Mazda2_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Mazda2_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda2");
+
 
         // Mazda 3 sedan
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Mazda3S_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Mazda3S_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Mazda3S_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda3 Sedan");
+
 
         // Mazda 3 hatchback
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Mazda3H_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Mazda3H_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Mazda3H_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda3 Hatchback");
+
 
         // Mazda 6
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Mazda6_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Mazda6_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Mazda6_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda6");
+
 
         // Mazda CX3
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("MazdaCX3_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("MazdaCX3_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("MazdaCX3_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda CX3");
+
 
         // Mazda CX5
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("MazdaCX5_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("MazdaCX5_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("MazdaCX5_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda CX5");
+
 
         // Mazda CX9
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("MazdaCX9_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("MazdaCX9_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("MazdaCX9_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda CX9");
+
 
         // Mazda MX5
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("MazdaMX5_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("MazdaMX5_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("MazdaMX5_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda MX5");
+
 
         // Mazda MX5 RF
 
         link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("MazdaMX5RF_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("MazdaMX5RF_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("MazdaMX5RF_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda MX5 RF");
+
 
     }
     @AfterMethod

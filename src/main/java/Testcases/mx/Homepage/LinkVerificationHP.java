@@ -67,8 +67,7 @@ public class LinkVerificationHP {
         WebElement heroCTA = driver.findElement(By.className(propsmmx.getProperty("heroCTA")));
         heroCTA.click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Hero_cta_url_prod"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Hero_cta_url_prod"), driver,"Home Page: Module #1 Mazda CX5 CTA");
 
 
         //Modulo #3: Touts links (Mazda6, MazdaCX9, Mazda MX5-RF)
@@ -76,7 +75,7 @@ public class LinkVerificationHP {
         //We use List web element because we are using the same class for the three vehicles (touts)
         List<WebElement> touts = driver.findElements(By.className(propsmmx.getProperty("Touts_links")));
         touts.get(0).click();
-        link_test.linkcompare(propsmmx.getProperty("Tout_mazda6_prod"),driver);
+        link_test.linkcompare(propsmmx.getProperty("Tout_mazda6_prod"),driver,"Home Page:Modulo #3 Touts links- Mazda6");
         Thread.sleep(4000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
         Thread.sleep(5000);
@@ -84,7 +83,7 @@ public class LinkVerificationHP {
         //We use List web element because we are using the same class for the three vehicles (touts)
         List<WebElement> touts1 = driver.findElements(By.className(propsmmx.getProperty("Touts_links")));
         touts1.get(1).click();
-        link_test.linkcompare(propsmmx.getProperty("Tout_mazdaCX9_prod"),driver);
+        link_test.linkcompare(propsmmx.getProperty("Tout_mazdaCX9_prod"),driver,"Home Page:Modulo #3 Touts links- Mazda CX9");
         Thread.sleep(4000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
         Thread.sleep(5000);
@@ -92,7 +91,7 @@ public class LinkVerificationHP {
         //We use List web element because we are using the same class for the three vehicles (touts)
         List<WebElement> touts2 = driver.findElements(By.className(propsmmx.getProperty("Touts_links")));
         touts2.get(2).click();
-        link_test.linkcompare(propsmmx.getProperty("Tout_mazdaMX5_prod"),driver);
+        link_test.linkcompare(propsmmx.getProperty("Tout_mazdaMX5_prod"),driver,"Home Page:Modulo #3- Touts links- Mazda MX5");
         Thread.sleep(4000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
         Thread.sleep(5000);
@@ -104,7 +103,7 @@ public class LinkVerificationHP {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(propsmmx.getProperty("Conocelo_cta"))).click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Conocelo_url_prod"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Conocelo_url_prod"), driver,"Home Page:Module #4 CONOCELO button");
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         //Module #5: Shopping Tools links (Configura, Cotiza, Compara)
@@ -113,19 +112,19 @@ public class LinkVerificationHP {
 
         ShoppingLinks.get(0).click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Configura_link_prod"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Configura_link_prod"), driver,"Home Page: Module #5 Shopping Tools Configura");
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         List<WebElement> ShoppingLinks1 = driver.findElements(By.className(propsmmx.getProperty("Shopping_tools_links")));
         ShoppingLinks1.get(1).click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Cotizar_link_prod"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Cotizar_link_prod"), driver,"Home Page: Module #5 Shopping Tools Cotiza");
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
         List<WebElement> ShoppingLinks2 = driver.findElements(By.className(propsmmx.getProperty("Shopping_tools_links")));
         ShoppingLinks2.get(2).click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Compara_Link_prod"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Compara_Link_prod"), driver,"Home Page: Module #5 Shopping Tools Compara");
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
 
@@ -134,7 +133,7 @@ public class LinkVerificationHP {
         Thread.sleep(2000);
         driver.findElement(By.cssSelector(propsmmx.getProperty("Skyactive_cta"))).click();
         Thread.sleep(2000);
-        link_test.linkcompare(propsmmx.getProperty("Skyactive_url_prod"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Skyactive_url_prod"), driver,"Home Page: Module #6 Skyactive");
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
     }
 

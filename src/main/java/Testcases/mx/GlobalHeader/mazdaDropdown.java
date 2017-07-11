@@ -63,29 +63,29 @@ public class mazdaDropdown {
 
         link_test.clicklink(propsmmx.getProperty("Mazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Nuestrahistoria_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Nuestrahistoria_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Nuestrahistoria_prod_url"), driver,"Global Header: Mazda Dropdown- Nuestra Historia");
+
 
         // Mazda Financial
 
         link_test.clicklink(propsmmx.getProperty("Mazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Mazdafinancial_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Mazdafinancial_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Mazdafinancial_prod_url"), driver,"Global Header: Mazda Dropdown- Mazda Financial");
+
 
         // SKYACTIVE
 
         link_test.clicklink(propsmmx.getProperty("Mazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Skyactive_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Skyactive_prod_url"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Skyactive_prod_url"), driver,"Global Header: Mazda Dropdown- SKYACTIVE");
+
 
         // SKYACTIVE button
 
         link_test.clicklink(propsmmx.getProperty("Mazda_dropdown"),2000, driver);
         link_test.clicklink(propsmmx.getProperty("Skyactive_button_click"),2000, driver);
-        link_test.linkcompare(propsmmx.getProperty("Skyactive_button_prod"), driver);
-        link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
+        link_test.linkcompare(propsmmx.getProperty("Skyactive_button_prod"), driver,"Global Header: Mazda Dropdown- SKYACTIVE Button");
+
 
     }
     @AfterMethod

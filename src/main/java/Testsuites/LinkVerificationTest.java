@@ -35,14 +35,14 @@ public class LinkVerificationTest {
 
 
 
-    public boolean linkcompare (String reference, WebDriver driver ) {
+    public boolean linkcompare (String reference, WebDriver driver, String linkreporter ) {
 
         if (driver.getCurrentUrl().equals(reference) ){
-            Reporter.log("Pass: " + reference +" <br/>");
+            Reporter.log("Pass: " + linkreporter +" <br/>");
             return true;
         }
         else {
-            Reporter.log("Fail: " + reference +" <br/>");
+            Reporter.log("Fail: " + linkreporter +" <br/>");
             return false;
         }
 
