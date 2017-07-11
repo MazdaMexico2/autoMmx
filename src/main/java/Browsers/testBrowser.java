@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
+import Testsuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -20,7 +21,7 @@ public class testBrowser {
 
     WebDriver driver;
     Properties configFile;
-
+    private selectBrowser defineBrowser;
     private Properties propsmmx;
 
 
@@ -28,27 +29,15 @@ public class testBrowser {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
     }
 
-
     @BeforeMethod
-    public void setUp() throws IOException {
+    public void setup() throws Exception {
 
-        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-
-        driver = new ChromeDriver();
-        //driver = new FirefoxDriver();
-        //driver = new SafariDriver();
-
-        //Test Alina #2
+        defineBrowser = new selectBrowser();
+        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
 
     }
 
