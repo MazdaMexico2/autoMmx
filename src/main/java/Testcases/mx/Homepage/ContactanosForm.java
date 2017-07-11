@@ -59,7 +59,9 @@ public class ContactanosForm {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
-        /* Define URL to test */
+        /* Define URL to test in STG environment, we need to call the path twice because first time you send the
+        parameter and the second time the page load the style Note: The url with parameter should not be call form
+        properties file*/
         driver.get("http://mazdamx:mazda217@stage.mazda.mx/");
         Thread.sleep(3000);
         driver.get("http://stage.mazda.mx/");
