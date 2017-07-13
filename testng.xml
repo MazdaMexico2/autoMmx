@@ -3,11 +3,7 @@
 <suite name="Suite" >
     <test name="Test">
         <classes>
-            <class name="Browsers.testBrowser"/>
-            <class name="Testcases.mx.GlobalHeader.headerDropdown"/>
-            <class name="Testcases.mx.GlobalHeader.MazdaLogoLinkVerification"/>
             <class name="Testcases.mx.GlobalHeader.vehiculosdrpodowlinktest"/>
-
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

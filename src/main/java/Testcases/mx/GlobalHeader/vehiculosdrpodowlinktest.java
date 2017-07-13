@@ -2,21 +2,26 @@ package Testcases.mx.GlobalHeader;
 
 import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
+import Testsuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.StringJoiner;
 
 public class vehiculosdrpodowlinktest {
 
     private Properties propsmmx;
     private LinkVerificationTest link_test;
+    private selectBrowser defineBrowser;
 
     WebDriver driver;
     Properties configFile;
@@ -25,34 +30,24 @@ public class vehiculosdrpodowlinktest {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
     }
 
 
     @BeforeMethod
-    public void setUp() throws IOException {
+    public void setup() throws Exception {
 
-        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-
-      driver = new ChromeDriver();
-       // driver = new FirefoxDriver();
-        //driver = new SafariDriver();
-
-        //Test Alina #2
+        defineBrowser = new selectBrowser();
+        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
 
     }
 
+
     @Test
     public void OpenBrowser() throws IOException, InterruptedException {
-        link_test = new LinkVerificationTest();
 
+        link_test = new LinkVerificationTest();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
@@ -133,11 +128,6 @@ public class vehiculosdrpodowlinktest {
 
         driver.quit();
     }
-
-
-
-
-
 
 
 }

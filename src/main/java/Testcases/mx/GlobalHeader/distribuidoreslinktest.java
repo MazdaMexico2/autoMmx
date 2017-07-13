@@ -3,6 +3,7 @@ package Testcases.mx.GlobalHeader;
 
         import Testsuites.LinkVerificationTest;
         import Testsuites.ReadProperties;
+        import Testsuites.selectBrowser;
         import org.openqa.selenium.JavascriptExecutor;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,11 +15,12 @@ package Testcases.mx.GlobalHeader;
         import java.io.IOException;
         import java.util.Properties;
 /**
- * Created by Pablo on 1/6/2017.
+ * Created by Pablo on 1/6/2017. 
  */
 public class distribuidoreslinktest {
     private Properties propsmmx;
     private LinkVerificationTest link_test;
+    private selectBrowser defineBrowser;
 
     WebDriver driver;
     Properties configFile;
@@ -27,27 +29,15 @@ public class distribuidoreslinktest {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-
         this.propsmmx = readprops.getConfigProperties("properties/GlobalHeader.properties");
 
     }
 
-
     @BeforeMethod
-    public void setUp() throws IOException {
+    public void setup() throws Exception {
 
-        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-
-        driver = new ChromeDriver();
-      //driver = new FirefoxDriver();
-        //driver = new SafariDriver();
-
-        //Test Alina #2
+        defineBrowser = new selectBrowser();
+        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
 
     }
 
@@ -74,16 +64,12 @@ public class distribuidoreslinktest {
 
 
     }
+
     @AfterMethod
     public void tearDown() {
 
         driver.quit();
     }
-
-
-
-
-
 
 
 }

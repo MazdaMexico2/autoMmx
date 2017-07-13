@@ -49,10 +49,7 @@ public class LinkVerificationTest {
 
         driver.get(linkreturn);
 
-
     }
-
-
 
 }
 

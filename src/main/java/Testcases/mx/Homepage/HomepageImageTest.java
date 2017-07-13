@@ -2,6 +2,7 @@ package Testcases.mx.Homepage;
 
 import Testsuites.ImageVerificationTest;
 import Testsuites.ReadProperties;
+import Testsuites.selectBrowser;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -24,6 +25,7 @@ public class HomepageImageTest {
 
     private Properties propsmmx;
     private ImageVerificationTest image_test;
+    private selectBrowser defineBrowser;
 
     WebDriver driver;
     Properties configFile;
@@ -32,28 +34,18 @@ public class HomepageImageTest {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-
         this.propsmmx = readprops.getConfigProperties("properties/Homepage.properties");
 
     }
 
 
     @BeforeMethod
-    public void setUp() throws IOException {
+    public void setup() throws Exception {
 
-        if( propsmmx.getProperty("device").equalsIgnoreCase("PC")){
-            System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
-            System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\geckodriver.exe");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "chromedriver");
-        }
-
-       // driver = new ChromeDriver();
-        driver = new FirefoxDriver();
-        //driver = new SafariDriver();
+        defineBrowser = new selectBrowser();
+        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
 
     }
-
 
 
     @Test
@@ -111,8 +103,6 @@ public class HomepageImageTest {
 
 
     }
-
-
 
 
     @AfterMethod
