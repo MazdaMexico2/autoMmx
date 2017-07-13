@@ -16,9 +16,6 @@ import org.testng.Reporter;
 
 public class LinkVerificationTest {
 
-    private String type;
-    private WebElement element;
-    private String link;
 
 
 
