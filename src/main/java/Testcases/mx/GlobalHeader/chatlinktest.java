@@ -56,7 +56,7 @@ public class chatlinktest {
             //Chat
 
             link_test.clicklink(propsmmx.getProperty("Chatnav_click"),1000, driver);
-            link_test.linkcompare(propsmmx.getProperty("Chatnav_prod_url"), driver);
+            link_test.linkcompare(propsmmx.getProperty("Chatnav_prod_url"), driver, "Chat");
             link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
 
 

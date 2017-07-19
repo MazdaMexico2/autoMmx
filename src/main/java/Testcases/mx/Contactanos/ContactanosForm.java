@@ -1,4 +1,4 @@
-package Testcases.mx.Homepage;
+package Testcases.mx.Contactanos;
 
 import Testsuites.LinkVerificationTest;
 import Testsuites.ReadProperties;
@@ -21,7 +21,7 @@ import java.util.Properties;
 import org.openqa.selenium.security.UserAndPassword;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import sun.tools.jconsole.Tab;
+//import sun.tools.jconsole.Tab;
 
 import static org.openqa.selenium.Keys.*;
 
@@ -41,7 +41,7 @@ public class ContactanosForm {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-        this.propsmmx = readprops.getConfigProperties("properties/GlobalFooter.properties");
+        this.propsmmx = readprops.getConfigProperties("properties/Contactanos.properties");
 
     }
 
@@ -66,6 +66,8 @@ public class ContactanosForm {
         Thread.sleep(3000);
         driver.get("http://stage.mazda.mx/");
         Thread.sleep(3000);
+
+
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();
