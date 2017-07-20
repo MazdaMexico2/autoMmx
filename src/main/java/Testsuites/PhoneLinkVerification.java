@@ -29,14 +29,15 @@ public class PhoneLinkVerification {
 
     public void phonealert (WebDriver driver){
         try {
-            WebDriverWait wait = new WebDriverWait(driver, 2);
-            wait.until(ExpectedConditions.alertIsPresent());
+           WebDriverWait wait = new WebDriverWait(driver, 20);
+           wait.until(ExpectedConditions.alertIsPresent());
             Alert alert = driver.switchTo().alert();
             System.out.println(alert.getText());
             alert.dismiss();
 
         } catch (Exception e) {
             //exception handling
+            e.printStackTrace(System.out);
         }
 
 

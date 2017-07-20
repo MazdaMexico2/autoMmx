@@ -110,8 +110,8 @@ public class vehiculosdrpodowlinktest {
 
         // Mazda MX5
 
-        link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),2000, driver);
-        link_test.clicklink(propsmmx.getProperty("MazdaMX5_click"),2000, driver);
+        link_test.clicklink(propsmmx.getProperty("vehiculos_dropdown"),1000, driver);
+        link_test.clicklink(propsmmx.getProperty("MazdaMX5_click"),1000, driver);
         link_test.linkcompare(propsmmx.getProperty("MazdaMX5_prod_url"), driver,"Global Header: Vehiculos Dropdown- Mazda MX5");
 
 

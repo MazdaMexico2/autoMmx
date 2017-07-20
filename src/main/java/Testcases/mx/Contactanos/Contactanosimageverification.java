@@ -1,7 +1,6 @@
 package Testcases.mx.Contactanos;
 
-import Testsuites.LinkVerificationTest;
-import Testsuites.PhoneLinkVerification;
+import Testsuites.ImageVerificationTest;
 import Testsuites.ReadProperties;
 import Testsuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,12 +12,11 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Created by Pablo on 13/7/2017.
+ * Created by Pablo on 19/7/2017.
  */
-public class PhoneNumberVerification {
-
+public class Contactanosimageverification {
     private Properties propsmmx;
-    private PhoneLinkVerification phonelink_test;
+    private ImageVerificationTest image_test;
     private selectBrowser defineBrowser;
 
     WebDriver driver;
@@ -32,6 +30,7 @@ public class PhoneNumberVerification {
 
     }
 
+
     @BeforeMethod
     public void setup() throws Exception {
 
@@ -40,36 +39,21 @@ public class PhoneNumberVerification {
 
     }
 
+
     @Test
-    public void OpenBrowser() throws IOException, InterruptedException {
-        phonelink_test = new PhoneLinkVerification();
+    public void TestImage() throws IOException, InterruptedException{
+
+        image_test = new ImageVerificationTest();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
-
 
         /* Define URL to test */
         driver.get(propsmmx.getProperty("prod_contactanos_url"));
 
-        phonelink_test.phoneclicklink(propsmmx.getProperty("phonelink_classname"),1000,driver);
-
-   phonelink_test.phonealert(driver);
+        /*Maximize Window and load*/
+        driver.manage().window().maximize();
+        image_test.imageTestBkg(propsmmx.getProperty("contactanosimage_src"),propsmmx.getProperty("contactanosimage_url"),driver,"Contactanos Image");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

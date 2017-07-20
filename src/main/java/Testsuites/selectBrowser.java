@@ -1,10 +1,13 @@
 package Testsuites;
 
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Parameters;
 
 import java.util.Properties;
@@ -30,6 +33,9 @@ public class selectBrowser {
             } else {
                 System.setProperty("webdriver.gecko.driver", "geckodriver");
             }
+            System.setProperty(
+                    FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,
+                    "false");
 
              return new FirefoxDriver();
         }

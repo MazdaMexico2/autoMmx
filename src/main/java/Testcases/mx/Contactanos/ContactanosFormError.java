@@ -1,39 +1,37 @@
-package Testcases.mx.Contactanos;
+        package Testcases.mx.Homepage;
 
-import Testsuites.LinkVerificationTest;
-import Testsuites.ReadProperties;
-import Testsuites.selectBrowser;
-import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Keyboard;
-import org.openqa.selenium.security.UserAndPassword;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import org.openqa.selenium.Alert;
+        import Testsuites.ImageVerificationTest;
+        import Testsuites.LinkVerificationTest;
+        import Testsuites.ReadProperties;
+        import Testsuites.selectBrowser;
+        import org.openqa.selenium.*;
+        import org.openqa.selenium.firefox.FirefoxDriver;
+        import org.openqa.selenium.chrome.ChromeDriver;
+        import org.openqa.selenium.interactions.Keyboard;
+        import org.openqa.selenium.security.UserAndPassword;
+        import org.openqa.selenium.support.ui.ExpectedConditions;
+        import org.openqa.selenium.support.ui.WebDriverWait;
+        import org.testng.Reporter;
+        import org.testng.annotations.AfterMethod;
+        import org.testng.annotations.BeforeMethod;
+        import org.testng.annotations.Test;
+        import org.openqa.selenium.Alert;
 
-import java.io.IOException;
-import java.util.Properties;
+        import java.io.IOException;
+        import java.util.Properties;
 
-import org.openqa.selenium.security.UserAndPassword;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-//import sun.tools.jconsole.Tab;
 
-import static org.openqa.selenium.Keys.*;
 
+        import static org.openqa.selenium.Keys.*;
 /**
- * Created by alina.viquez on 7/9/17.
+ * Created by alina.viquez on 7/18/17.
  */
-public class ContactanosForm {
+public class ContactanosFormError {
 
     private Properties propsmmx;
     private LinkVerificationTest link_test;
     private selectBrowser defineBrowser;
+    private ImageVerificationTest image_test;
 
     WebDriver driver;
     Properties configFile;
@@ -42,7 +40,7 @@ public class ContactanosForm {
     public void readprops() throws IOException {
 
         ReadProperties readprops = new ReadProperties();
-        this.propsmmx = readprops.getConfigProperties("properties/Contactanos.properties");
+        this.propsmmx = readprops.getConfigProperties("properties/GlobalFooter.properties");
 
     }
 
@@ -68,8 +66,6 @@ public class ContactanosForm {
         driver.get("http://stage.mazda.mx/");
         Thread.sleep(3000);
 
-
-
         /*Maximize Window and load*/
         driver.manage().window().maximize();
         jse.executeScript("window.scrollBy(0,3500)");
@@ -94,7 +90,7 @@ public class ContactanosForm {
         driver.findElement(By.className(propsmmx.getProperty("submitContactanosForm"))).click();
         Thread.sleep(5000);
 
-        //Background image Test Thank you page
+        //Background image Test error page
         WebElement errorImg = driver.findElement(By.className(propsmmx.getProperty("error_page_img")));
         errorImg.getAttribute("src");
         if (errorImg.toString().equals(propsmmx.getProperty("error_img_url"))) {
@@ -104,9 +100,14 @@ public class ContactanosForm {
         }
         Thread.sleep(3000);
 
-        driver.findElement(By.className("mdp-forms__summary--message-secondary")).click();
-        Thread.sleep(3000);
+        //Error Page CTAs Test
 
+        driver.findElement(By.className(propsmmx.getProperty("regresar_form_cta"))).click();
+        Thread.sleep(3000);
+        driver.findElement(By.linkText("CHAT")).click();
+        Thread.sleep(3000);
+        driver.findElement(By.className(propsmmx.getProperty("chat_error_cta"))).click();
+        Thread.sleep(3000);
     }
 
     @AfterMethod
@@ -114,5 +115,4 @@ public class ContactanosForm {
 
         driver.quit();
     }
-
 }
