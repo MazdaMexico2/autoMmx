@@ -6,6 +6,7 @@ import Testsuites.ReadProperties;
 import Testsuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -43,31 +44,23 @@ public class PhoneNumberVerification {
     @Test
     public void OpenBrowser() throws IOException, InterruptedException {
         phonelink_test = new PhoneLinkVerification();
-
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
         /* Define URL to test */
         driver.get(propsmmx.getProperty("prod_contactanos_url"));
 
-        phonelink_test.phoneclicklink(propsmmx.getProperty("phonelink_classname"),1000,driver);
+        phonelink_test.phonesrccompare(propsmmx.getProperty("phonenumber"),driver);
 
-   phonelink_test.phonealert(driver);
+
 }
 
 
+    @AfterMethod
+    public void tearDown() {
 
-
-
-
-
-
-
-
-
-
-
-
+        driver.quit();
+    }
 
 
 

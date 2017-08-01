@@ -15,54 +15,25 @@ public class PhoneLinkVerification {
 
 
 
-    public void phoneclicklink (String classname , int wait, WebDriver driver){
-        WebElement element = driver.findElement(By.className(classname));
-        element.click();
+
+
+
+
+
+    public void phonesrccompare (String phonenumber,  WebDriver driver){
+
+        WebElement phoneposition = driver.findElement(By.cssSelector(phonenumber));
         try {
-            Thread.sleep(wait);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-
-    public void phonealert (WebDriver driver){
-        try {
-           WebDriverWait wait = new WebDriverWait(driver, 20);
-           wait.until(ExpectedConditions.alertIsPresent());
-            Alert alert = driver.switchTo().alert();
-            System.out.println(alert.getText());
-            alert.dismiss();
+            phoneposition.getCssValue("data-analytics-link-type");
+            phoneposition.equals("call");
+            Reporter.log("Pass: " + phonenumber + " phone link. "+ "<br>");
 
         } catch (Exception e) {
-            //exception handling
-            e.printStackTrace(System.out);
-        }
-
-
-    }
-
-
-
-    public boolean phonelinkcompare (String reference, WebDriver driver, String linkreporter ) {
-
-        if (driver.getCurrentUrl().equals(reference) ){
-            Reporter.log("Pass: " + linkreporter +" <br/>");
-            return true;
-        }
-        else {
-            Reporter.log("Fail: " + linkreporter +" <br/>");
-            return false;
+            Reporter.log("Fail:" + phonenumber + "  phone link. "+ "<br>");
         }
 
     }
 
-    public void phonereturnpage (String linkreturn, WebDriver driver){
-
-        driver.get(linkreturn);
-
-    }
 
 
 }
