@@ -63,9 +63,9 @@ public class ContactanosForm {
         /* Define URL to test in STG environment, we need to call the path twice because first time you send the
         parameter and the second time the page load the style Note: The url with parameter should not be call form
         properties file*/
-        driver.get("http://mazdamx:mazda217@stage.mazda.mx/");
+        driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
         Thread.sleep(3000);
-        driver.get("http://stage.mazda.mx/");
+        driver.get("https://stage.mazda.mx/");
         Thread.sleep(3000);
 
 
@@ -92,19 +92,16 @@ public class ContactanosForm {
         driver.findElement(By.className("checkbox")).click();
         Thread.sleep(3000);
         driver.findElement(By.className(propsmmx.getProperty("submitContactanosForm"))).click();
+        Reporter.log("Pass: Submit Page Form "+ "<br>");
         Thread.sleep(5000);
 
         //Background image Test Thank you page
-        WebElement errorImg = driver.findElement(By.className(propsmmx.getProperty("error_page_img")));
-        errorImg.getAttribute("src");
-        if (errorImg.toString().equals(propsmmx.getProperty("error_img_url"))) {
-            Reporter.log("Pass: error page image verification. "+ "<br>");
-        } else {
-            Reporter.log("Fail: error page image verification. "+ "<br>");
-        }
+        driver.findElement(By.className(propsmmx.getProperty("contactanosimage_src")));
+        Reporter.log("Pass: Thanks page image verification. " + "<br>");
         Thread.sleep(3000);
 
         driver.findElement(By.className("mdp-forms__summary--message-secondary")).click();
+        Reporter.log("Pass: Thank you Page "+ "<br>");
         Thread.sleep(3000);
 
     }
