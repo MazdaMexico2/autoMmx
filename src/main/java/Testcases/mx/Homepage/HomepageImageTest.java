@@ -51,12 +51,23 @@ public class HomepageImageTest {
     @Test
     public void TestImage() throws IOException, InterruptedException{
 
+        ReadProperties readp = new ReadProperties();
+        this.propsmmx = readp.getConfigProperties("properties/Config.properties");
         image_test = new ImageVerificationTest();
 
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
         /* Define URL to test */
-        driver.get(propsmmx.getProperty("prod_home_url"));
+        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
+            driver.get("https://www.mazda.mx");
+        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
+            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
+            Thread.sleep(3000);
+            driver.get("https://stage.mazda.mx/");
+            Thread.sleep(3000);
+        }else {
+            System.out.print("Please define the URL");
+        }
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();

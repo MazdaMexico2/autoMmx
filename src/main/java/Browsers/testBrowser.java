@@ -44,11 +44,23 @@ public class testBrowser {
     @Test
     public void OpenBrowser() throws IOException, InterruptedException {
 
+        ReadProperties readp = new ReadProperties();
+        this.propsmmx = readp.getConfigProperties("properties/Config.properties");
+
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
         /* Define URL to test*/
-        driver.get("https://www.mazda.mx/");
+        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
+            driver.get("https://www.mazda.mx");
+        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
+            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
+            Thread.sleep(3000);
+            driver.get("https://stage.mazda.mx/");
+            Thread.sleep(3000);
+        }else {
+            System.out.print("Please define the URL");
+        }
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();

@@ -31,6 +31,7 @@ public class PhoneNumberVerification {
         ReadProperties readprops = new ReadProperties();
         this.propsmmx = readprops.getConfigProperties("properties/Contactanos.properties");
 
+
     }
 
     @BeforeMethod
@@ -43,12 +44,25 @@ public class PhoneNumberVerification {
 
     @Test
     public void OpenBrowser() throws IOException, InterruptedException {
+
+        ReadProperties readp = new ReadProperties();
+        this.propsmmx = readp.getConfigProperties("properties/Config.properties");
         phonelink_test = new PhoneLinkVerification();
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
+
         /* Define URL to test */
-        driver.get(propsmmx.getProperty("prod_contactanos_url"));
+        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
+            driver.get("https://www.mazda.mx");
+        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
+            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
+            Thread.sleep(3000);
+            driver.get("https://stage.mazda.mx/");
+            Thread.sleep(3000);
+        }else {
+            System.out.print("Please define the URL");
+        }
 
         phonelink_test.phonesrccompare(propsmmx.getProperty("phonenumber"),driver);
 
