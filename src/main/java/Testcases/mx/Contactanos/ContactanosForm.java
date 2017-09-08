@@ -95,11 +95,6 @@ public class ContactanosForm {
         Reporter.log("Pass: Submit Page Form "+ "<br>");
         Thread.sleep(5000);
 
-        //Background image Test Thank you page
-        driver.findElement(By.className(propsmmx.getProperty("contactanosimage_src")));
-        Reporter.log("Pass: Thanks page image verification. " + "<br>");
-        Thread.sleep(3000);
-
         driver.findElement(By.className("mdp-forms__summary--message-secondary")).click();
         Reporter.log("Pass: Thank you Page "+ "<br>");
         Thread.sleep(3000);

@@ -1,6 +1,5 @@
 package Testcases.mx.Contactanos;
 
-import Testsuites.ImageVerificationTest;
 import Testsuites.ReadProperties;
 import Testsuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;

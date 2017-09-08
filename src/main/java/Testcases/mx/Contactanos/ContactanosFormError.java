@@ -1,29 +1,18 @@
         package Testcases.mx.Contactanos;
 
-        import Testsuites.ImageVerificationTest;
         import Testsuites.LinkVerificationTest;
         import Testsuites.ReadProperties;
         import Testsuites.selectBrowser;
         import org.openqa.selenium.*;
-        import org.openqa.selenium.firefox.FirefoxDriver;
-        import org.openqa.selenium.chrome.ChromeDriver;
-        import org.openqa.selenium.interactions.Keyboard;
-        import org.openqa.selenium.security.UserAndPassword;
-        import org.openqa.selenium.support.ui.ExpectedConditions;
-        import org.openqa.selenium.support.ui.WebDriverWait;
         import org.testng.Reporter;
         import org.testng.annotations.AfterMethod;
         import org.testng.annotations.BeforeMethod;
         import org.testng.annotations.Test;
-        import org.openqa.selenium.Alert;
 
         import java.io.IOException;
         import java.util.Properties;
 
-
-
-        import static org.openqa.selenium.Keys.*;
-/**
+        /**
  * Created by alina.viquez on 7/18/17.
  */
 public class ContactanosFormError {
@@ -91,10 +80,6 @@ public class ContactanosFormError {
         Reporter.log("Pass: Submit Error Page Form "+ "<br>");
         Thread.sleep(5000);
 
-        //Background image Test error page
-        WebElement BkImgTest = driver.findElement(By.className(propsmmx.getProperty("error_page_img")));
-        Reporter.log("Pass: Error page image verification. "+ "<br>");
-        Thread.sleep(3000);
 
         //Error Page CTAs Test
 
