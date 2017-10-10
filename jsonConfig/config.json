@@ -1,0 +1,18 @@
+{
+  "remote": false,
+  "browser": "firefox",
+  "device": "mac",
+  "environment": "stg",
+  "urls": {
+  "prod":"https://www.mazda.mx/",
+  "stage":"https://mazdamx:mazda217@stage.mazda.mx/"
+},
+  "saucelabsuser":"vincent.delupio",
+  "saucelabsaccesskey":"25b8e1a4-444a-4206-8590-e2767f872fbe"
+  "saucelabs":{
+    "platform":"OS X 10.11",
+    "version":"53.0",
+    "screenResolution":"1600x1200",
+    "name":"TBD"
+  }
+}

@@ -3,7 +3,7 @@
 <suite name="Suite" >
     <test name="Test">
         <classes>
-            <class name="Testcases.mx.Contactanos.ContactanosForm"/>
+            <class name="TestCases.Contactanos.ContactanosForm"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->
