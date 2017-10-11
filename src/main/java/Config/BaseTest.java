@@ -131,9 +131,6 @@ public class BaseTest {
         if (((String)data.get("environment")).toLowerCase().equals("stg")){
 
             driver.get((String) urls.get("stage"));
-            Thread.sleep(5000);
-            driver.get((String) urls.get("stage"));
-
         } else {
 
             driver.get((String) urls.get("prod"));

@@ -1,6 +1,6 @@
 {
   "remote": false,
-  "browser": "firefox",
+  "browser": "chrome",
   "device": "mac",
   "environment": "stg",
   "urls": {
