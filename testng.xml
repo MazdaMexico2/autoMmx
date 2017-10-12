@@ -3,7 +3,7 @@
 <suite name="Suite" >
     <test name="Test">
         <classes>
-            <class name="TestCases.Contactanos.ContactanosForm"/>
+            <class name="TestCases.GlobalHeader.HomapageImagePanel1"/>
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

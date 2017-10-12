@@ -1,6 +1,7 @@
 package TestCases.GlobalHeader; /**
  * Created by Pablo on 18/5/2017.
  */
+import Config.BaseTest;
 import TestSuites.LinkVerificationTest;
 import TestSuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
@@ -15,7 +16,7 @@ import java.util.Properties;
 
 
 
-public class MazdaLogoLinkVerification {
+public class MazdaLogoLinkVerification extends BaseTest {
 
     private Properties propsmmx;
     private LinkVerificationTest link_test;
@@ -36,9 +37,9 @@ public class MazdaLogoLinkVerification {
     @BeforeMethod
     public void setup() throws Exception {
 
-        defineBrowser = new selectBrowser();
-        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
-
+//        defineBrowser = new selectBrowser();
+//        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
+        driver = super.getWebDriver();
     }
 
     @Test
@@ -50,17 +51,20 @@ public class MazdaLogoLinkVerification {
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
-        /* Define URL to test */
-        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
-            driver.get("https://www.mazda.mx");
-        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
-            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
-            Thread.sleep(3000);
-            driver.get("https://stage.mazda.mx/");
-            Thread.sleep(3000);
-        }else {
-            System.out.print("Please define the URL");
-        }
+//        /* Define URL to test */
+//        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
+//            driver.get("https://www.mazda.mx");
+//        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
+//            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
+//            Thread.sleep(3000);
+//            driver.get("https://stage.mazda.mx/");
+//            Thread.sleep(3000);
+//        }else {
+//            System.out.print("Please define the URL");
+//        }
+
+
+        super.getEnvUrl(driver);
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();

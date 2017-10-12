@@ -1,6 +1,6 @@
 {
-  "remote": false,
-  "browser": "firefox",
+  "remote": true,
+  "browser": "chrome",
   "device": "mac",
   "environment": "stg",
   "urls": {
@@ -10,9 +10,9 @@
   "saucelabsuser":"vincent.delupio",
   "saucelabsaccesskey":"25b8e1a4-444a-4206-8590-e2767f872fbe"
   "saucelabs":{
-    "platform":"OS X 10.11",
-    "version":"53.0",
-    "screenResolution":"1600x1200",
-    "name":"TBD"
+    "platform":"macOS 10.12",
+    "version":"61.0",
+    "screenResolution":"1920x1080",
+    "name":"Mazda Logo image"
   }
 }
