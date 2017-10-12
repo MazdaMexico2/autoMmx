@@ -1,13 +1,12 @@
 package TestCases.footer;
 
+import Config.BaseTest;
 import TestSuites.LinkVerificationTest;
 import TestSuites.ReadProperties;
 import TestSuites.selectBrowser;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -15,11 +14,10 @@ import java.util.Properties;
 /**
  * Created by nserralde on 5/19/17.
  */
-public class footerTestLinks {
+public class footerTestLinks extends BaseTest {
+
     private Properties propsmmx;
     private LinkVerificationTest link_test;
-    private selectBrowser defineBrowser;
-
     WebDriver driver;
     Properties configFile;
 
@@ -28,15 +26,12 @@ public class footerTestLinks {
 
         ReadProperties readprops = new ReadProperties();
         this.propsmmx = readprops.getConfigProperties("properties/GlobalFooter.properties");
-
     }
 
-    @BeforeMethod
+    @BeforeTest
     public void setup() throws Exception {
 
-        defineBrowser = new selectBrowser();
-        driver = defineBrowser.setupBrowser(propsmmx.getProperty("browser"),propsmmx.getProperty("device"));
-
+        driver = super.getWebDriver();
     }
 
     @Test
@@ -44,23 +39,12 @@ public class footerTestLinks {
 
         ReadProperties readp = new ReadProperties();
         this.propsmmx = readp.getConfigProperties("properties/Config.properties");
-
         link_test = new LinkVerificationTest();
-
         JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 
         /* Define URL to test*/
-        if (propsmmx.getProperty("url").contains("https://www.mazda.mx")){
-            driver.get("https://www.mazda.mx");
-        }if (propsmmx.getProperty("url").contains("https://mazdamx:mazda217@stage.mazda.mx/")){
-            driver.get("https://mazdamx:mazda217@stage.mazda.mx/");
-            Thread.sleep(3000);
-            driver.get("https://stage.mazda.mx/");
-            Thread.sleep(3000);
-        }else {
-            System.out.print("Please define the URL");
-        }
+        super.getEnvUrl(driver);
 
         /*Maximize Window and load*/
         driver.manage().window().maximize();
@@ -111,13 +95,11 @@ public class footerTestLinks {
         link_test.linkcompare(propsmmx.getProperty("prod_site_map_url"), driver,"Footer: Site Map");
         Thread.sleep(2000);
         link_test.returnpage(propsmmx.getProperty("prod_home_url"), driver);
-
     }
 
-   @AfterMethod
+   @AfterTest
     public void tearDown() {
 
         driver.quit();
     }
-
 }
