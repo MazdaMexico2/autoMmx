@@ -1,0 +1,22 @@
+{
+  "footercssselectors":{
+    "distribuidores":".mdp-navigation-footer__distributors-label",
+    "facebook":".mdp-navigation-footer__social-list-item--facebook",
+    "twitter":".mdp-navigation-footer__social-list-item--twitter",
+    "instagram":".mdp-navigation-footer__social-list-item--instagram",
+    "contactanos":".mdp-navigation-footer__subscribe",
+    "terms_conditions":"li.mdp-navigation-footer__terms-list-item:nth-child(1)",
+    "politicas":"li.mdp-navigation-footer__terms-list-item:nth-child(2)",
+    "mapa":"li.mdp-navigation-footer__terms-list-item:nth-child(3)"
+  },
+  "footerurls":{
+    "distribuidores":"localizar-distribuidor",
+    "facebook":"https://www.facebook.com/mazdamexico",
+    "twitter":"https://twitter.com/mazdaoficial",
+    "instagram":"https://www.instagram.com/mazdaoficial/",
+    "contactanos":"contactanos",
+    "terms_conditions":"site/terminos-y-condiciones",
+    "politicas":"site/politica-de-privacidad",
+    "mapa":"mapa-sitio"
+  }
+}

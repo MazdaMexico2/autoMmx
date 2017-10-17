@@ -8,7 +8,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import java.net.MalformedURLException;
+
 import java.net.URL;
 
 
@@ -128,12 +128,25 @@ public class BaseTest {
 
         JSONObject urls = (JSONObject)data.get("urls");
 
-        if (((String)data.get("environment")).toLowerCase().equals("stg")){
+        if (((String)data.get("environment")).toLowerCase().equals("stage")){
 
             driver.get((String) urls.get("stage"));
         } else {
 
             driver.get((String) urls.get("prod"));
+        }
+    }
+
+    public String defineEnvironmentPath(){
+
+        JSONObject urls = (JSONObject)data.get("urls");
+
+        if (((String)data.get("environment")).toLowerCase().equals("stage")){
+
+           return urls.get("stagePath").toString();
+        } else {
+
+            return urls.get("prod").toString();
         }
     }
 }
